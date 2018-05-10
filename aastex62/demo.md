@@ -33,23 +33,62 @@ abstract: |
 
 # Introduction {#sec:intro}
 
-\latex\ \footnote{\url{http://www.latex-project.org/}} is a document markup
-language that is particularly well suited for the publication of
-mathematical and scientific articles \citep{lamport94}. \latex\ was written
-in 1985 by Leslie Lamport who based it on the \TeX\ typesetting language
-which itself was created by Donald E. Knuth in 1978.  In 1988 a suite of
-\latex\ macros were developed to investigate electronic submission and
-publication of AAS Journal articles \citep{1989BAAS...21..780H}.  Shortly
-afterwards, Chris Biemesdefer merged these macros and more into a \latex\
-2.08 style file called \aastex.  These early \aastex\ versions introduced
-many common commands and practices that authors take for granted today.
-Substantial revisions
-were made by Lee Brotzman and Pierre Landau when the package was updated to
-v4.0.  AASTeX v5.0, written in 1995 by Arthur Ogawa, upgraded to \latex\ 2e
-which uses the document class in lieu of a style file.  Other improvements
-to version 5 included hypertext support, landscape deluxetables and
-improved figure support to facilitate electronic submission.  
-\aastex\ v5.2 was released in 2005 and introduced additional graphics
-support plus new mark up to identifier astronomical objects, datasets and
-facilities.
+\latex\ \footnote{\url{http://www.latex-project.org/}} is a document markup language that is particularly well suited for the publication of mathematical and scientific articles \citep{lamport94}.
+\latex\ was written in 1985 by Leslie Lamport who based it on the \TeX\ typesetting language which itself was created by Donald E. Knuth in 1978.
+In 1988 a suite of \latex\ macros were developed to investigate electronic submission and publication of AAS Journal articles @1989BAAS...21..780H.
+Shortly afterwards, Chris Biemesdefer merged these macros and more into a \latex\ 2.08 style file called \aastex.
+These early \aastex\ versions introduced many common commands and practices that authors take for granted today.
+Substantial revisions were made by Lee Brotzman and Pierre Landau when the package was updated to v4.0.
+AASTeX v5.0, written in 1995 by Arthur Ogawa, upgraded to \latex\ 2e which uses the document class in lieu of a style file.
+Other improvements to version 5 included hypertext support, landscape deluxetables and improved figure support to facilitate electronic submission.
+\aastex\ v5.2 was released in 2005 and introduced additional graphics support plus new mark up to identifier astronomical objects, datasets and facilities.
+
+In 1996 Maxim Markevitch modified the AAS preprint style file, aaspp4.sty, to closely emulate the very tight, two column style of a typeset Astrophysical Journal article.
+The result was emulateapj.sty.
+A year later Alexey Vikhlinin took over development and maintenance.
+In 2001 he converted emulateapj into a class file in \latex\ 2e and in 2003 Vikhlinin completely rewrote emulateapj based on the APS Journal's RevTEX class.
+
+During this time emulateapj gained growing acceptance in the astronomical community as it filled an author need to obtain an approximate number of manuscript pages prior to submission for cost and length estimates.
+The tighter typeset also had the added advantage of saving paper when printing out hard copies.
+
+Even though author publication charges are no longer based on print pages \footnote{see Section \ref{sec:pubcharge} in the Appendix for more details about how current article costs are calculated.} the emulateapj class file has proven to be extremely popular with AAS Journal authors.
+An informal analysis of submitted \latex\ manuscripts in 2015 revealed that $\sim$65\% either called emulateapj or have a commented emulateapj classfile call indicating it was used at some stage of the manuscript construction.
+Clearly authors want to have access to a tightly typeset version of the article when corresponding with co-authors and for preprint submissions.
+
+When planning the next \aastex\ release the popularity of emulateapj played an important roll in the decision to drop the old base code and adopt and modify emulateapj for \aastex\ v6.+ instead.
+The change brings \aastex\ inline with what the majority of authors are already using while still delivering new and improved features.
+\aastex\ v6.0 through v6.2 were written by Amy Hendrickson and released in January 2016 (v6.0), October 2016 (v6.1), and January 2018 (v6.2), respectively.
+Some of the new features in v6.0 included:
+
+* improved citations for third party data repositories and software,
+* easier construction of matrix figures consisting of multiple encapsulated postscript (EPS) or portable document format (PDF) files,
+* figure set mark up for large collections of similar figures,
+* color mark up to easily enable/disable revised text highlighting,
+* improved url support, and
+* numerous table options such as the ability to hide columns, column decimal alignment, automatic column math mode and numbering, plus splitting of wide tables.
+
+The features in v6.1 were:
+
+* ORCID support for preprints,
+* improved author, affiliation and collaboration mark up,
+* reintroduced the old AASTeX v5.2 {\tt\string\received}, {\tt\string\revised}, {\tt\string\accepted}, and {\tt\string\published} commands plus added the new {\tt\string\submitjournal} command to document which AAS Journal the manuscript was submitted to, plus
+* new typeset style options.
+
+The new features in v6.2 are:
+
+* A new RNAAS style option for Research Note manuscripts,
+* Titles no longer put in all caps,
+* No page skip between the title page and article body,
+* re-introduce RevTeX's widetext environment for long lines in two column style formats, and
+* upgrade to the {\tt\string\doi} command.
+
+The rest of this article provides information and examples on how to create your own AAS Journal manuscript with v6.2.
+Special emphasis is placed on how to use the full potential of \aastex\ v6+.
+The next section describes the different manuscript styles available and how they differ from past releases.
+Section \ref{sec:floats} describes how tables and figures are placed in a \latex\ document.
+Specific examples of tables, Section \ref{subsec:tables}, and figures, Section \ref{subsec:figures}, are also provided.
+Section \ref{sec:displaymath} discusses how to display math and incorporate equations in a manuscript while Section \ref{sec:highlight} discuss how to use the new revision mark up.
+The last section, \ref{sec:cite}, shows how recognize software and external data as first class references in the manuscript bibliography.
+An appendix is included to show how to construct one and provide some information on how article charges are calculated.
+Additional information is available both embedded in the comments of this \latex\ file and in the online documentation at <http://journals.aas.org/authors/aastex.html>.
 
