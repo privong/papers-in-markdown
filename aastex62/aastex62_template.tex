@@ -49,6 +49,14 @@ $for(author)$
             \affiliation{$author.affiliation$}
         $endfor$
     $endif$
+    $if(author.collaboration)$
+        $for(author.collaboration)$
+            \collaboration{$author.collaboration$}
+        $endfor$
+    $endif$
+    $if(author.nocollaboration)$
+    \nocollaboration
+    $endif$
 $endfor$
 
 $if(keywords)$

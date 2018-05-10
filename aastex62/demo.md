@@ -15,10 +15,13 @@ author:
   affiliation: ["American Astronomical Society \\ 2000 Florida Ave., NW, Suite 300 \\ Washington, DC 20009-1231, USA"]
 - name: August Muench
   affiliation: ["American Astronomical Society \\ 2000 Florida Ave., NW, Suite 300 \\ Washington, DC 20009-1231, USA"]
+  collaboration: "(AAS Journals Data Scientists collaboration)"
 - name: Butler Burton
   affiliation: ["National Radio Astronomy Observatory", "AAS Journals Associate Editor-in-Chief"]
+  nocollaboration: 1
 - name: Amy Hendrickson
   affiliation: ["TeXnology Inc."]
+  collaboration: "(LaTeX collaboration)"
 - name: Julie Steffen
   affiliation: ["AAS Director of Publishing", "American Astronomical Society \\ 2000 Florida Ave., NW, Suite 300 \\ Washington, DC 20009-1231, USA"]
 - name: Jeff Lewandowski
