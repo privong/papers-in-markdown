@@ -1,0 +1,64 @@
+\documentclass
+$if(aastexopts)$
+[
+$for(aastexopts)$
+ $aastexopts$,
+$endfor$
+$endif$
+]
+{aastex62}
+
+$if(bibstyle)$
+\bibliographystyle{$bibstyle$}
+$endif$
+
+$if(received)$
+\received{$received$}
+$endif$
+
+$if(revised)$
+\revised{$revised$}
+$endif$
+
+$if(accepted)$
+\accepted{$accepted$}
+$endif$
+
+$if(submitjournal)$
+\submitjournal{$submitjournal$}
+$endif$
+
+\begin{document}
+
+\title{$title$}
+
+$for(author)$
+\author
+    $if(author.ORCID)$
+        [$author.ORCID$]
+    $endif$
+    {$author.name$}
+    $if(author.affiliation)$
+        $for(author.affiliation)$
+            \affiliation{$author.affiliation$}
+        $endfor$
+    $endif$
+$endfor$
+
+$if(keywords)$
+    \keywords{
+    $for(keywords)$
+        $keywords$ --- 
+    $endfor$
+    }
+$endif$
+
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+$body$
+
+\end{document}
