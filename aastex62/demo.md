@@ -24,6 +24,7 @@ author:
   affiliation: ["IOP Senior Publisher for the AAS Journals", "IOP Publishing, Washington, DC 20005"]
 keywords: ["editorials, notices", miscellaneous, catalogs, surveys]
 software: ["pandoc"]
+facility: ["HST(STIS)", "Swift(XRT and UVOT)", "AAVSO", "CTIO:1.3m", "CTIO:1.5m", "CXO"]
 abstract: |
   This example manuscript is intended to serve as a tutorial and template for authors to use when writing their own AAS Journal articles. The manuscript includes a history of \aastex\ and documents the new features in the previous versions as well as the new features in version 6.2. This manuscript includes many figure and table examples to illustrate these new features.  Information on features not explicitly mentioned in the article can be viewed in the manuscript comments or more extensive online documentation. Authors are welcome replace the text, tables, figures, and bibliography with their own and submit the resulting manuscript to the AAS Journals peer review system.  The first lesson in the tutorial is to remind authors that the AAS Journals, the Astrophysical Journal (ApJ), the Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all have a 250 word limit for the abstract\footnote{Note that manuscripts submitted to the new Research Notes of the American Astronomical Society (RNAAS) do **not** have abstracts.}.  If you exceed this length the Editorial office will ask you to shorten it.
 ---
@@ -53,7 +54,7 @@ During this time emulateapj gained growing acceptance in the astronomical commun
 The tighter typeset also had the added advantage of saving paper when printing out hard copies.
 
 Even though author publication charges are no longer based on print pages \footnote{see Section \ref{sec:pubcharge} in the Appendix for more details about how current article costs are calculated.} the emulateapj class file has proven to be extremely popular with AAS Journal authors.
-An informal analysis of submitted \latex\ manuscripts in 2015 revealed that $\sim$65\% either called emulateapj or have a commented emulateapj classfile call indicating it was used at some stage of the manuscript construction.
+An informal analysis of submitted \latex\ manuscripts in 2015 revealed that $\sim$ 65\% either called emulateapj or have a commented emulateapj classfile call indicating it was used at some stage of the manuscript construction.
 Clearly authors want to have access to a tightly typeset version of the article when corresponding with co-authors and for preprint submissions.
 
 When planning the next \aastex\ release the popularity of emulateapj played an important roll in the decision to drop the old base code and adopt and modify emulateapj for \aastex\ v6.+ instead.

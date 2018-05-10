@@ -69,4 +69,12 @@ $endfor$
 }
 $endif$
 
+$if(facility)$
+\facility{
+$for(facility)$
+$facility$,
+$endfor$
+}
+$endif$
+
 \end{document}
