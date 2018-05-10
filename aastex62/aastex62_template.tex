@@ -61,4 +61,12 @@ $endif$
 
 $body$
 
+$if(software)$
+\software{
+$for(software)$
+$software$,
+$endfor$
+}
+$endif$
+
 \end{document}
