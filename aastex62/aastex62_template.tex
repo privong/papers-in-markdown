@@ -12,6 +12,12 @@ $if(bibstyle)$
 \bibliographystyle{$bibstyle$}
 $endif$
 
+$if(preambleinput)$
+$for(preambleinput)$
+\input{$preambleinput$}
+$endfor$
+$endif$
+
 $if(received)$
 \received{$received$}
 $endif$

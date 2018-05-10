@@ -1,11 +1,12 @@
 ---
 aastexopts: [twocolumn, tighten]
+preambleinput: ["macros.tex"]
 bibstyle: aasjournal
 received: "January 1, 2018"
 revised: "January 7, 2018"
 accepted: "\\today"
 submitjournal: ApJ 
-title: "An Example Article using \aastex v6.2\footnote{Released on January, 8th, 2018}}"
+title: "An Example Article using \\aastex v6.2\\footnote{Released on January, 8th, 2018}}"
 shorttitle: Sample article
 shortauthors: Schwarz et al.
 author:
@@ -29,15 +30,11 @@ abstract: |
   This example manuscript is intended to serve as a tutorial and template for authors to use when writing their own AAS Journal articles. The manuscript includes a history of \aastex\ and documents the new features in the previous versions as well as the new features in version 6.2. This manuscript includes many figure and table examples to illustrate these new features.  Information on features not explicitly mentioned in the article can be viewed in the manuscript comments or more extensive online documentation. Authors are welcome replace the text, tables, figures, and bibliography with their own and submit the resulting manuscript to the AAS Journals peer review system.  The first lesson in the tutorial is to remind authors that the AAS Journals, the Astrophysical Journal (ApJ), the Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all have a 250 word limit for the abstract\footnote{Note that manuscripts submitted to the new Research Notes of the American Astronomical Society (RNAAS) do **not** have abstracts.}.  If you exceed this length the Editorial office will ask you to shorten it.
 ---
 
-\newcommand{\vdag}{(v)^\dagger}
-\newcommand\aastex{AAS\TeX}
-\newcommand\latex{La\TeX}
-
 # Introduction {#sec:intro}
 
 \latex\ \footnote{\url{http://www.latex-project.org/}} is a document markup language that is particularly well suited for the publication of mathematical and scientific articles \citep{lamport94}.
 \latex\ was written in 1985 by Leslie Lamport who based it on the \TeX\ typesetting language which itself was created by Donald E. Knuth in 1978.
-In 1988 a suite of \latex\ macros were developed to investigate electronic submission and publication of AAS Journal articles @1989BAAS...21..780H.
+In 1988 a suite of \latex\ macros were developed to investigate electronic submission and publication of AAS Journal articles \citep{1989BAAS...21..780H}.
 Shortly afterwards, Chris Biemesdefer merged these macros and more into a \latex\ 2.08 style file called \aastex.
 These early \aastex\ versions introduced many common commands and practices that authors take for granted today.
 Substantial revisions were made by Lee Brotzman and Pierre Landau when the package was updated to v4.0.
@@ -73,7 +70,7 @@ The features in v6.1 were:
 
 * ORCID support for preprints,
 * improved author, affiliation and collaboration mark up,
-* reintroduced the old AASTeX v5.2 {\tt\string\received}, {\tt\string\revised}, {\tt\string\accepted}, and {\tt\string\published} commands plus added the new {\tt\string\submitjournal} command to document which AAS Journal the manuscript was submitted to, plus
+* reintroduced the old AASTeX v5.2 `received`, `revised`, `accepted`, and `published` commands plus added the new `submitjournal` command to document which AAS Journal the manuscript was submitted to, plus
 * new typeset style options.
 
 The new features in v6.2 are:
@@ -82,7 +79,7 @@ The new features in v6.2 are:
 * Titles no longer put in all caps,
 * No page skip between the title page and article body,
 * re-introduce RevTeX's widetext environment for long lines in two column style formats, and
-* upgrade to the {\tt\string\doi} command.
+* upgrade to the `doi` command.
 
 The rest of this article provides information and examples on how to create your own AAS Journal manuscript with v6.2.
 Special emphasis is placed on how to use the full potential of \aastex\ v6+.
