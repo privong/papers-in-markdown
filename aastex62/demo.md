@@ -27,7 +27,7 @@ author:
 - name: Jeff Lewandowski
   affiliation: ["IOP Senior Publisher for the AAS Journals", "IOP Publishing, Washington, DC 20005"]
 keywords: ["editorials, notices", miscellaneous, catalogs, surveys]
-software: ["pandoc"]
+software: ["pandoc", "astropy [@astropy2013]", "Cloudy [@Ferland2013]", "SExtractor [@Bertin1996]"]
 facility: ["HST(STIS)", "Swift(XRT and UVOT)", "AAVSO", "CTIO:1.3m", "CTIO:1.5m", "CXO"]
 abstract: |
   This example manuscript is intended to serve as a tutorial and template for authors to use when writing their own AAS Journal articles. The manuscript includes a history of \aastex\ and documents the new features in the previous versions as well as the new features in version 6.2. This manuscript includes many figure and table examples to illustrate these new features.  Information on features not explicitly mentioned in the article can be viewed in the manuscript comments or more extensive online documentation. Authors are welcome replace the text, tables, figures, and bibliography with their own and submit the resulting manuscript to the AAS Journals peer review system.  The first lesson in the tutorial is to remind authors that the AAS Journals, the Astrophysical Journal (ApJ), the Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all have a 250 word limit for the abstract^[Note that manuscripts submitted to the new Research Notes of the American Astronomical Society (RNAAS) do **not** have abstracts.].  If you exceed this length the Editorial office will ask you to shorten it.
@@ -35,9 +35,9 @@ abstract: |
 
 # Introduction {#sec:intro}
 
-\latex\ ^[\url{http://www.latex-project.org/}] is a document markup language that is particularly well suited for the publication of mathematical and scientific articles \citep{lamport94}.
+\latex\ ^[\url{http://www.latex-project.org/}] is a document markup language that is particularly well suited for the publication of mathematical and scientific articles [@lamport94].
 \latex\ was written in 1985 by Leslie Lamport who based it on the \TeX\ typesetting language which itself was created by Donald E. Knuth in 1978.
-In 1988 a suite of \latex\ macros were developed to investigate electronic submission and publication of AAS Journal articles \citep{1989BAAS...21..780H}.
+In 1988 a suite of \latex\ macros were developed to investigate electronic submission and publication of AAS Journal articles [@1989BAAS...21..780H].
 Shortly afterwards, Chris Biemesdefer merged these macros and more into a \latex\ 2.08 style file called \aastex.
 These early \aastex\ versions introduced many common commands and practices that authors take for granted today.
 Substantial revisions were made by Lee Brotzman and Pierre Landau when the package was updated to v4.0.
