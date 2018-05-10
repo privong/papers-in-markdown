@@ -1,9 +1,9 @@
 ---
 aastexopts: [twocolumn, tighten]
-bibstle: aasjournal
+bibstyle: aasjournal
 received: "January 1, 2018"
 revised: "January 7, 2018"
-accepted: "\today"
+accepted: "\\today"
 submitjournal: ApJ 
 title: "An Example Article using \aastex v6.2\footnote{Released on January, 8th, 2018}}"
 shorttitle: Sample article
@@ -24,7 +24,7 @@ author:
   affiliation: ["IOP Senior Publisher for the AAS Journals", "IOP Publishing, Washington, DC 20005"]
 keywords: ["editorials, notices", miscellaneous, catalogs, surveys]
 abstract: |
-  This example manuscript is intended to serve as a tutorial and template for authors to use when writing their own AAS Journal articles. The manuscript includes a history of \aastex\ and documents the new features in the previous versions as well as the new features in version 6.2. This manuscript includes many figure and table examples to illustrate these new features.  Information on features not explicitly mentioned in the article can be viewed in the manuscript comments or more extensive online documentation. Authors are welcome replace the text, tables, figures, and bibliography with their own and submit the resulting manuscript to the AAS Journals peer review system.  The first lesson in the tutorial is to remind authors that the AAS Journals, the Astrophysical Journal (ApJ), the Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all have a 250 word limit for the abstract\footnote{Note that manuscripts submitted to the new Research Notes of the American Astronomical Society (RNAAS) do \textbf{not} have abstracts.}.  If you exceed this length the Editorial office will ask you to shorten it.
+  This example manuscript is intended to serve as a tutorial and template for authors to use when writing their own AAS Journal articles. The manuscript includes a history of \aastex\ and documents the new features in the previous versions as well as the new features in version 6.2. This manuscript includes many figure and table examples to illustrate these new features.  Information on features not explicitly mentioned in the article can be viewed in the manuscript comments or more extensive online documentation. Authors are welcome replace the text, tables, figures, and bibliography with their own and submit the resulting manuscript to the AAS Journals peer review system.  The first lesson in the tutorial is to remind authors that the AAS Journals, the Astrophysical Journal (ApJ), the Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all have a 250 word limit for the abstract\footnote{Note that manuscripts submitted to the new Research Notes of the American Astronomical Society (RNAAS) do **not** have abstracts.}.  If you exceed this length the Editorial office will ask you to shorten it.
 ---
 
 \newcommand{\vdag}{(v)^\dagger}
