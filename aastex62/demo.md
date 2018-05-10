@@ -1,5 +1,5 @@
 ---
-aastexopts: [twocolumn, tighten]
+aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
 bibstyle: aasjournal
 received: "January 1, 2018"
@@ -59,39 +59,39 @@ The change brings \aastex\ inline with what the majority of authors are already 
 \aastex\ v6.0 through v6.2 were written by Amy Hendrickson and released in January 2016 (v6.0), October 2016 (v6.1), and January 2018 (v6.2), respectively.
 Some of the new features in v6.0 included:
 
-* improved citations for third party data repositories and software,
+1. improved citations for third party data repositories and software,
 
-* easier construction of matrix figures consisting of multiple encapsulated postscript (EPS) or portable document format (PDF) files,
+2. easier construction of matrix figures consisting of multiple encapsulated postscript (EPS) or portable document format (PDF) files,
 
-* figure set mark up for large collections of similar figures,
+3. figure set mark up for large collections of similar figures,
 
-* color mark up to easily enable/disable revised text highlighting,
+4. color mark up to easily enable/disable revised text highlighting,
 
-* improved url support, and
+5. improved url support, and
 
-* numerous table options such as the ability to hide columns, column decimal alignment, automatic column math mode and numbering, plus splitting of wide tables.
+6. numerous table options such as the ability to hide columns, column decimal alignment, automatic column math mode and numbering, plus splitting of wide tables.
 
 The features in v6.1 were:
 
-* ORCID support for preprints,
+1. ORCID support for preprints,
 
-* improved author, affiliation and collaboration mark up,
+2. improved author, affiliation and collaboration mark up,
 
-* reintroduced the old AASTeX v5.2 `received`, `revised`, `accepted`, and `published` commands plus added the new `submitjournal` command to document which AAS Journal the manuscript was submitted to, plus
+3. reintroduced the old AASTeX v5.2 `\received`, `\revised`, `\accepted`, and `\published` commands plus added the new `\submitjournal` command to document which AAS Journal the manuscript was submitted to, plus
 
-* new typeset style options.
+4. new typeset style options.
 
 The new features in v6.2 are:
 
-* A new RNAAS style option for Research Note manuscripts,
+1. A new RNAAS style option for Research Note manuscripts,
 
-* Titles no longer put in all caps,
+2. Titles no longer put in all caps,
 
-* No page skip between the title page and article body,
+3. No page skip between the title page and article body,
 
-* re-introduce RevTeX's widetext environment for long lines in two column style formats, and
+4. re-introduce RevTeX's widetext environment for long lines in two column style formats, and
 
-* upgrade to the `doi` command.
+5. upgrade to the `\doi` command.
 
 The rest of this article provides information and examples on how to create your own AAS Journal manuscript with v6.2.
 Special emphasis is placed on how to use the full potential of \aastex\ v6+.
