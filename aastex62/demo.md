@@ -1,5 +1,5 @@
 ---
-aastexopts: [singlecolumn]
+#aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
 bibstyle: aasjournal
 received: "January 1, 2018"
