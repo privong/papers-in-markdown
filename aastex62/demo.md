@@ -6,7 +6,7 @@ received: "January 1, 2018"
 revised: "January 7, 2018"
 accepted: "\\today"
 submitjournal: ApJ 
-title: "An Example Article using \\aastex v6.2\\footnote{Released on January, 8th, 2018}}"
+title: "An Example Article using \\aastex v6.2^[Released on January, 8th, 2018]"
 shorttitle: Sample article
 shortauthors: Schwarz et al.
 author:
@@ -27,12 +27,12 @@ keywords: ["editorials, notices", miscellaneous, catalogs, surveys]
 software: ["pandoc"]
 facility: ["HST(STIS)", "Swift(XRT and UVOT)", "AAVSO", "CTIO:1.3m", "CTIO:1.5m", "CXO"]
 abstract: |
-  This example manuscript is intended to serve as a tutorial and template for authors to use when writing their own AAS Journal articles. The manuscript includes a history of \aastex\ and documents the new features in the previous versions as well as the new features in version 6.2. This manuscript includes many figure and table examples to illustrate these new features.  Information on features not explicitly mentioned in the article can be viewed in the manuscript comments or more extensive online documentation. Authors are welcome replace the text, tables, figures, and bibliography with their own and submit the resulting manuscript to the AAS Journals peer review system.  The first lesson in the tutorial is to remind authors that the AAS Journals, the Astrophysical Journal (ApJ), the Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all have a 250 word limit for the abstract\footnote{Note that manuscripts submitted to the new Research Notes of the American Astronomical Society (RNAAS) do **not** have abstracts.}.  If you exceed this length the Editorial office will ask you to shorten it.
+  This example manuscript is intended to serve as a tutorial and template for authors to use when writing their own AAS Journal articles. The manuscript includes a history of \aastex\ and documents the new features in the previous versions as well as the new features in version 6.2. This manuscript includes many figure and table examples to illustrate these new features.  Information on features not explicitly mentioned in the article can be viewed in the manuscript comments or more extensive online documentation. Authors are welcome replace the text, tables, figures, and bibliography with their own and submit the resulting manuscript to the AAS Journals peer review system.  The first lesson in the tutorial is to remind authors that the AAS Journals, the Astrophysical Journal (ApJ), the Astrophysical Journal Letters (ApJL), and Astronomical Journal (AJ), all have a 250 word limit for the abstract^[Note that manuscripts submitted to the new Research Notes of the American Astronomical Society (RNAAS) do **not** have abstracts.].  If you exceed this length the Editorial office will ask you to shorten it.
 ---
 
 # Introduction {#sec:intro}
 
-\latex\ \footnote{\url{http://www.latex-project.org/}} is a document markup language that is particularly well suited for the publication of mathematical and scientific articles \citep{lamport94}.
+\latex\ ^[\url{http://www.latex-project.org/}] is a document markup language that is particularly well suited for the publication of mathematical and scientific articles \citep{lamport94}.
 \latex\ was written in 1985 by Leslie Lamport who based it on the \TeX\ typesetting language which itself was created by Donald E. Knuth in 1978.
 In 1988 a suite of \latex\ macros were developed to investigate electronic submission and publication of AAS Journal articles \citep{1989BAAS...21..780H}.
 Shortly afterwards, Chris Biemesdefer merged these macros and more into a \latex\ 2.08 style file called \aastex.
@@ -50,7 +50,7 @@ In 2001 he converted emulateapj into a class file in \latex\ 2e and in 2003 Vikh
 During this time emulateapj gained growing acceptance in the astronomical community as it filled an author need to obtain an approximate number of manuscript pages prior to submission for cost and length estimates.
 The tighter typeset also had the added advantage of saving paper when printing out hard copies.
 
-Even though author publication charges are no longer based on print pages \footnote{see Section \ref{sec:pubcharge} in the Appendix for more details about how current article costs are calculated.} the emulateapj class file has proven to be extremely popular with AAS Journal authors.
+Even though author publication charges are no longer based on print pages^[see Section \ref{sec:pubcharge} in the Appendix for more details about how current article costs are calculated.] the emulateapj class file has proven to be extremely popular with AAS Journal authors.
 An informal analysis of submitted \latex\ manuscripts in 2015 revealed that $\sim$ 65\% either called emulateapj or have a commented emulateapj classfile call indicating it was used at some stage of the manuscript construction.
 Clearly authors want to have access to a tightly typeset version of the article when corresponding with co-authors and for preprint submissions.
 
