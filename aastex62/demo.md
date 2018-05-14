@@ -35,7 +35,7 @@ abstract: |
 
 # Introduction {#sec:intro}
 
-\latex\ ^[\url{http://www.latex-project.org/}] is a document markup language that is particularly well suited for the publication of mathematical and scientific articles [@lamport94].
+\latex\ ^[<http://www.latex-project.org/>] is a document markup language that is particularly well suited for the publication of mathematical and scientific articles [@lamport94].
 \latex\ was written in 1985 by Leslie Lamport who based it on the \TeX\ typesetting language which itself was created by Donald E. Knuth in 1978.
 In 1988 a suite of \latex\ macros were developed to investigate electronic submission and publication of AAS Journal articles [@1989BAAS...21..780H].
 Shortly afterwards, Chris Biemesdefer merged these macros and more into a \latex\ 2.08 style file called \aastex.
