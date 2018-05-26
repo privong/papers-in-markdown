@@ -26,3 +26,7 @@ abstract: |
 This is a MNRAS Markdown template.
 It is similar to the aastex62 template, but modified to match 
 See the aastex demonstration for a description of how to use `pandoc` and Markdown together.
+
+{{acknowledgments}}
+
+G.C.P. acknowledges support from the University of Florida.

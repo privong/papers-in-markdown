@@ -3,13 +3,13 @@
 Generate a `tex` file with:
 
 ```
-pandoc demo.md -s --template mnras_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc
+pandoc demo.md -s --template mnras_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua
 ```
 
 Go straight to the pdf with:
 
 ```
-pandoc demo.md -s --template mnras_template.tex -o demo.pdf -F pandoc-crossref -F pandoc-citeproc --pdf-engine=xelatex
+pandoc demo.md -s --template mnras_template.tex -o demo.pdf -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --pdf-engine=xelatex
 ```
 
 The `demo.md` file contains a sample article describing the use of this template in generating MNRAS output via pandoc.
