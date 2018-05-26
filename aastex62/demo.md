@@ -1,5 +1,5 @@
 ---
-aastexopts: [modern]
+aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
 bibstyle: aasjournal
 received: "January 1, 2018"
@@ -7,7 +7,7 @@ received: "January 1, 2018"
 #accepted: "\\today"
 #submitjournal: ApJ
 title: "Preparation of Articles using Markdown and Pandoc"
-shorttitle: Sample article
+shorttitle: "Articles in Markdown and Pandoc"
 shortauthors: Privon and Carberry
 author:
 - name: George C. Privon
@@ -20,7 +20,7 @@ author:
   collaboration: "(ORCID Demonstration)"
 keywords: [miscellaneous]
 software: ["[`pandoc`](http://pandoc.org)"]
-facility: ["VLT"]
+facility: []
 abstract: |
   Markdown provides a straightforward way to create articles and documentation in a form where the underlying text is easily readable, while also facilitating the generation of various other formats. This includes \TeX\, HTML, docx, and PDF (via \TeX) files. This article and the associated code describe a template which can be used to write articles in Markdown and use the `pandoc` software to convert the markdown text into an \aastex-compatible tex file for submission to the AAS Journals. The advantage of this approach is ease of readability for the source files and flexibility in output formats. We note that this approach can be applied to \TeX\ submissions for other journals and only requires the creation of an appropriate \TeX\ template file and modification of the YAML header of this demonstration document.
 ---
@@ -103,12 +103,12 @@ For example the \TeX\ for this document was generated with:
 
 `pandoc` supports user-written filters.
 We have already seen two filters, `pandoc-citeproc` and `pandoc-crossref`.
-These filters enable customizable processing of documents during conversion.
-Commonly used langaues for this include Haskell, lua, and python^[Using either the `panflute` or `pandocfilters` modules.].
+These filters enable customized processing of documents during conversion.
+Commonly used languages for this include Haskell, lua, and python^[Using either the `panflute` or `pandocfilters` modules.].
 Note that a lua parser is included with `pandoc` versions 2.0 and newer, and the use of lua filters is faster than other options.
 
-With output formats besides \aastex\ in mind, the acknowledgements portion of the document has been delineated in the markdown file as a macros: `{{acknowledgments}}`.
-However, is desirable to automatically convert this to a `\acknowledgements` macros when creating a \TeX\ file.
+With output formats besides \aastex\ in mind, the acknowledgments portion of the document has been delineated in the markdown file as a macros: `{{acknowledgments}}`.
+However, is desirable to automatically convert this to an `\acknowledgments` macro when creating a \TeX\ file.
 As a filter demonstration, the following lua code performs this translation:
 
 ```
@@ -131,10 +131,13 @@ This filter is included as `aastex62/filters/acknowledgments.lua` in the templat
 It can be used by with the `--lua-filter=` command-line argument.
 It can be extended easily to other formats, including say html.
 
+Generally, creation of filters would be more broadly useful in automating the conversion of markdown files into journal-compatible \TeX.
+A opportunity for this is to write a filter that takes the markdown "simple table" format and converts it into an \aastex\ `deluxetable`.
+
 # Summary
 
 We have provided a brief demonstration for a method of writing research articles in Markdown and converting them to an \aastex-compatible format for submission to AAS Journals.
-This method is is easily extended to other resesarch journals.
+This method is easily extended to other research journals.
 The advantage of this approach is improved ease of reading the source material and added flexibility for output formats.
 The template and demonstration text are made publicly available for use and enhancement by the community: <https://github.com/privong/papers-in-markdown>.
 
