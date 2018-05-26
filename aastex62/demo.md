@@ -7,6 +7,7 @@ texpackages:
 - name: amsmath
 #  opts: 
 bibstyle: aasjournal
+bibliography: demo.bib
 received: "January 1, 2018"
 #revised: "January 7, 2018"
 #accepted: "\\today"
@@ -90,8 +91,13 @@ The YAML header given below is that used for the preparation of this document:
 ---
 aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
-texpackages: [xspace, amsmath]
+texpackages:
+- name: xspace
+#  opts: 
+- name: amsmath
+#  opts: 
 bibstyle: aasjournal
+bibliography: demo.bib
 received: "January 1, 2018"
 #revised: "January 7, 2018"
 #accepted: "\\today"
