@@ -70,33 +70,17 @@ However, those will not propagate through to other output formats with which `pa
 
 This is an example of a "simple table"^[<https://pandoc.org/MANUAL.html#tables>]:
 
-Year  Subscription    Publication
-----  --------------  -----------
-1991  600             100
-1992  650             105
-1993  550             103
-1994  450             110
-1995  410             112
-1996  400             114
-1997  525             115
-1998  590             116
-1999  575             115
-2000  450             103
-2001  490              90
-2002  500              88
-2003  450              90
-2004  460              88
-2005  440              79
-2006  350              77
-2007  325              70
-2008  320              65
-2009  190              68
-2010  280              70
-2011  275              68
-2012  150              56
-2013  140              55
+Date        Day              Number of storms
+----------  --------------  -----------------
+2018-05-21  Monday                        ...
+2018-05-22  Tuesday                         2
+2018-05-23  Wednesday                       1
+2018-05-24  Thursday                        3
+2018-05-25  Friday                          0
+2018-05-26  Saturday                        0
+2018-05-27  Sunday                          0
 
-Table: ApJ costs from 1991 to 2013.
+Table: Number of imaginary thunderstorms in Gainesville, FL during the 21st week of 2018. 
 
 ## Citations {#sec:citations}
 
@@ -128,6 +112,15 @@ As a filter demonstration, the following lua code performs this translation:
 
 
 If can be invoked by adding `--lua-filter=filters/acknowledgments.lua` to the `pandoc` invocation.
+
+# Summary
+
+We have provided a brief demonstration for a method of writing research articles in Markdown and converting them to an \aastex-compatible format for submission to AAS Journals.
+This method is is easily extended to other resesarch journals.
+The advantage of this approach is improved ease of reading the source material and added flexibility for output formats.
+The template and demonstration text are made publicly available for use and enhancement by the community: <https://github.com/privong/papers-in-markdown>.
+
+
 
 # Acknowledgments
 
