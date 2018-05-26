@@ -23,6 +23,8 @@ return {
         if elem.text == "{{acknowledgments}}" then
             if string.find(FORMAT, "latex") then
                 return pandoc.RawInline("tex", "\\acknowledgements")
+            elseif string.find(FORMAT, "html") then
+                return pandoc.RawInline("html", "<h1>Acknowledgements</h1>")
             else
                 return elem
             end
