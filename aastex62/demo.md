@@ -3,9 +3,9 @@ aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
 texpackages:
 - name: xspace
-#  opts: 
+#  opts:
 - name: amsmath
-#  opts: 
+#  opts:
 bibstyle: aasjournal
 bibliography: demo.bib
 received: "January 1, 2018"
@@ -93,9 +93,9 @@ aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
 texpackages:
 - name: xspace
-#  opts: 
+#  opts:
 - name: amsmath
-#  opts: 
+#  opts:
 bibstyle: aasjournal
 bibliography: demo.bib
 received: "January 1, 2018"
@@ -128,6 +128,17 @@ If a different style (e.g., `twocolumn`) is desired, this can be changed in `aas
 YAML header entries and corresponding \TeX\ template code have been created to correspond to most (if not all) of the \aastex\ metadata options.
 
 ## Images {#sec:images}
+
+Images can be included, captioned, and labeled:
+
+![A r-band image of dm1647+21 in grayscale with a lookalike N-body simulation overlaid as the colored points. From @Privon2017b.](images/dm1647.png){#fig:dm1647 width=3in height=3in}
+
+[Figure @fig:dm1647] was included as:
+
+```
+![A r-band image of dm1647+21 in grayscale with a lookalike N-body simulation overlaid as \
+the colored points. From @Privon2017b.](images/dm1647.png){#fig:dm1647 width=3in height=3in}
+```
 
 ## Tables {#sec:tables}
 
