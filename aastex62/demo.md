@@ -77,7 +77,7 @@ Article data such as the title, relevant dates, author list, keywords, etc. is s
 The `pandoc` template also derives the \aastex\ style information from this YAML header, via the `aastexops` entry.
 The YAML header given below is that used for the preparation of this document:
 
-```
+```{#yamlheader .yaml .numberLines}
 ---
 aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
@@ -138,6 +138,9 @@ Table: Number of imaginary thunderstorms in Gainesville, FL during the 21st week
 Citations can be incorporated using the pandoc-citeproc filter^[<https://pandoc.org/MANUAL.html#citations>].
 These citations take the form of: `[@Astropy2018]` to correspond to [@Astropy2018].
 
+## Equations {#sec:equations}
+
+
 # Notes on Preparation for Submission {#sec:notes}
 
 ## Limitations on Internal References
@@ -162,7 +165,7 @@ With output formats besides \aastex\ in mind, the acknowledgments portion of the
 However, is desirable to automatically convert this to an `\acknowledgments` macro when creating a \TeX\ file.
 As a filter demonstration, the following lua code performs this translation:
 
-```
+```{#ackfilter .lua .numberLines}
 return {
   {
     Str = function (elem)
