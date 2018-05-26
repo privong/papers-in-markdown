@@ -44,7 +44,7 @@ This approach simplifies the writing process while retaining the power of \latex
 ## Markdown {#sec:markdown}
 
 The Markdown specification was released by John Gruber in 2004^[<https://daringfireball.net/projects/markdown/>].
-Markdown was originally intended to specify a plain text format which could be converted to `html` but in which the source could easily be read:
+Markdown was originally intended to specify a plain text format which could be converted to HTML but in which the source could easily be read:
 
 > A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. – John Gruber
 
@@ -206,7 +206,7 @@ return {
 
 This filter is included as `aastex62/filters/acknowledgments.lua` in the template distribution.
 It can be used by with the `--lua-filter=` command-line argument.
-It can be extended easily to other formats, including say html.
+It can be extended easily to other formats, including say HTML.
 
 Generally, creation of filters would be more broadly useful in automating the conversion of markdown files into journal-compatible \TeX.
 A opportunity for this is to write a filter that takes the markdown "simple table" format and converts it into an \aastex\ `deluxetable`.
