@@ -48,14 +48,14 @@ Markdown was originally intended to specify a plain text format which could be c
 
 > A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. – John Gruber
 
-Since its release Markdown (and its various flavors) have been extended and become widely used, and additional output formats have become supported ([@sec:pandoc]).
+Since its release Markdown (and its various flavors) have been extended and become widely used, and additional output formats have become supported ([Section @sec:pandoc]).
 Describing Markdown is beyond this scope of this document, but we refer the reader to the `pandoc` markdown description^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] and Gruber's original specification.
 
 ## Pandoc {#sec:pandoc}
 
 `pandoc` is "a universal document converter"^[<https://pandoc.org>], originally written by John MacFarlane^[<http://johnmacfarlane.net/>].
 At present it supports 25 input formats and 47 output formats (including variations of several standards such as markdown) and supports user-defined output formats.
-Pandoc is written in the Haskell programming language and supports extensions written as filters.
+`pandoc` is written in the Haskell programming language and supports extensions written as filters.
 This template
 
 Note that the author can write \TeX\ into the markdown file and `pandoc` will happily pass it through to the finished product.
@@ -65,10 +65,10 @@ Pandoc filers^[<https://pandoc.org/filters.html>] may be crafted to convert simp
 
 ## Paper Organization
 
-We broadly divide this article into demonstrations of how to prepare a manuscript in Markdown such that it generates nearly-submittable \TeX\ ([@sec:prep]).
-This includes how to specify the article style via the YAML header of the markdown file ([@sec:style]).
-We then demonstrate how to include images ([@sec:images]), tables ([@sec:tables]), and citations ([@sec:citations]).
-We the conclude by discussing some practical considerations for this paper writing process ([@sec:notes]).
+We broadly divide this article into demonstrations of how to prepare a manuscript in Markdown such that it generates nearly-submittable \TeX\ ([Section @sec:prep]).
+This includes how to specify the article style via the YAML header of the markdown file ([Section @sec:style]).
+We then demonstrate how to include images ([Section @sec:images]), tables ([Section @sec:tables]), and citations ([Section @sec:citations]).
+We the conclude by discussing some practical considerations for this paper writing process ([Section @sec:notes]).
 
 Throughout we assume the reader is familar with Markdown and do not discuss mMarkdown's text formatting.
 Instead we discuss the general behavior of the template file and actions which are necessary for generating \aastex-compatible output.
@@ -135,7 +135,7 @@ This tool will pass \latex\ tables through `pandoc` to the chosen \latex\ parser
 Thus, any tables which are part of \aastex will work for producing pdfs.
 However, those will not propagate through to other output formats with which `pandoc` is compatible.
 
-This is an example of a "simple table"^[<https://pandoc.org/MANUAL.html#tables>]:
+[Table @tbl:storms] is an example of a "simple table"^[<https://pandoc.org/MANUAL.html#tables>]:
 
 Date        Day              Number of storms
 ----------  --------------  -----------------
@@ -147,7 +147,7 @@ Date        Day              Number of storms
 2018-05-26  Saturday                        0
 2018-05-27  Sunday                          0
 
-Table: Number of imaginary thunderstorms in Gainesville, FL during the 21st week of 2018. 
+Table: Number of imaginary thunderstorms in Gainesville, FL during the 21st week of 2018. {#tbl:storms}
 
 ## Citations {#sec:citations}
 
@@ -160,7 +160,7 @@ Equations can be specified and labeled in the text. `$$e^{i\pi} + 1 = 0$$ {#eq:e
 
 $$e^{i\pi} + 1 = 0$$ {#eq:euler}
 
-And [@eq:euler] can subsequently be referenced.
+And [equation @eq:euler] can subsequently be referenced.
 This method of specifying math and equations can be coupled with `pandoc`'s support for a variety of methods to render math in HTML^[<https://pandoc.org/MANUAL.html#math-rendering-in-html>].
 
 
