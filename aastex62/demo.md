@@ -22,7 +22,7 @@ author:
   nocollaboration: 1
 - name: Josiah Carberry
   ORCID: 0000-0002-1825-0097
-  affiliation: ["Wesleyan University, Middletown, CT", "Brown University: Providence, RI"]
+  affiliation: ["Department of Psychoceramics, Wesleyan University, Middletown, CT", "Department of Psychoceramics, Brown University: Providence, RI"]
   collaboration: "(ORCID Demonstration)"
 keywords: [miscellaneous]
 software: ["[`pandoc`](http://pandoc.org)"]
@@ -206,8 +206,8 @@ return {
 ```
 
 This filter is included as `aastex62/filters/acknowledgments.lua` in the template distribution.
-It can be used by with the `--lua-filter=` command-line argument.
-It can be extended easily to other formats, including say HTML.
+It can be used with the `--lua-filter=` command-line argument.
+This filer be easily extended to other output formats, including HTML.
 
 Generally, creation of filters would be more broadly useful in automating the conversion of markdown files into journal-compatible \TeX.
 A opportunity for this is to write a filter that takes the markdown "simple table" format and converts it into an \aastex\ `deluxetable`.
