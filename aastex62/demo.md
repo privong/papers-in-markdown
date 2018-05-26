@@ -1,7 +1,11 @@
 ---
 aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
-texpackages: [xspace, amsmath]
+texpackages:
+- name: xspace
+#  opts: 
+- name: amsmath
+#  opts: 
 bibstyle: aasjournal
 received: "January 1, 2018"
 #revised: "January 7, 2018"

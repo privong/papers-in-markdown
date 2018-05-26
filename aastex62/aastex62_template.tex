@@ -13,11 +13,17 @@ $if(bibstyle)$
 $endif$
 
 $if(texpackages)$
-\usepackage{
 $for(texpackages)$
-$texpackages$,
+\usepackage
+$if(opts)$
+[
+$for(opts)$
+$opts$,
 $endfor$
-}
+]
+$endif$
+{$texpackages.name$}
+$endfor$
 $endif$
 
 $if(preambleinput)$
