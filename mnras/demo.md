@@ -10,6 +10,9 @@ title: "Preparation of MNRAS Articles using Markdown and Pandoc"
 shorttitle: "MNRAS Markdown Template"
 shortauthors: Privon
 pubyear: 2018
+#accepted:
+#received:
+#originalform:
 author:
 - name: George C. Privon
   affiliation: ["Department of Astronomy, University of Florida, 211 Bryant Space Sciences Center, Gainesville, 32611 FL, USA"]

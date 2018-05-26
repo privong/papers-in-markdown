@@ -49,7 +49,27 @@ $endif$
 $endfor$
 }
 
-\date{$date$}
+
+\date{
+Accepted 
+$if(accepted)$
+$accepted$.
+$else$
+XXX.
+$endif$
+Received
+$if(received)$
+$received$;
+$else$
+YYY;
+$endif$
+in original form
+$if(originalform)$
+$originalform$;
+$else$
+ZZZ
+$endif$
+}
 
 $if(pubyear)$
 \pubyear{$pubyear$}
