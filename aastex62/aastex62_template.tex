@@ -12,6 +12,14 @@ $if(bibstyle)$
 \bibliographystyle{$bibstyle$}
 $endif$
 
+$if(texpackages)$
+\usepackage{
+$for(texpackages)$
+$texpackages$,
+$endfor$
+}
+$endif$
+
 $if(preambleinput)$
 $for(preambleinput)$
 \input{$preambleinput$}

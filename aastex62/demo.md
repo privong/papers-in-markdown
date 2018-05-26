@@ -1,6 +1,7 @@
 ---
 aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
+texpackages: [xspace, amsmath]
 bibstyle: aasjournal
 received: "January 1, 2018"
 #revised: "January 7, 2018"
@@ -81,6 +82,7 @@ The YAML header given below is that used for the preparation of this document:
 ---
 aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
+texpackages: [xspace, amsmath]
 bibstyle: aasjournal
 received: "January 1, 2018"
 #revised: "January 7, 2018"
