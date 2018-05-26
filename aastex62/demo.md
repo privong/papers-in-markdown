@@ -27,11 +27,23 @@ abstract: |
 
 # Introduction {#sec:intro}
 
+Manuscript preparation is an integral part of disseminating research.
+Currently papers are predominantly prepared in \latex\ or sometimes WYSIWYG editors such as Microsoft Word or Apple Pages.
+While powerful in their own ways, each of these have their own drawbacks.
+In particular \latex\ often suffers from a steep learning curve and crypic error messages while WYSIWYG editors have historically had sub-par mathematics rendering ability and suffered from difficulties with robust internal referencing.
+
+Here we describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([@sec:markdown]) and using `pandoc` ([@sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX, Microsoft Word's `.docx`).
+This approach simplifies the writing process while retaining the power of \latex.
+
 ## Markdown {#sec:markdown}
 
 The Markdown specification was released by John Gruber in 2004^[<https://daringfireball.net/projects/markdown/>].
-Markdown was originally intended to specify a plain text format which could be converted to `html` but in which the source could easily be read.
+Markdown was originally intended to specify a plain text format which could be converted to `html` but in which the source could easily be read:
+
+> A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. – John Gruber
+
 Since its release Markdown (and its various flavors) have been extended and become widely used, and additional output formats have become supported ([@sec:pandoc]).
+Describing Markdown is beyond this scope of this document, but we refer the reader to the `pandoc` markdown description^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] and Gruber's original specification.
 
 ## Pandoc {#sec:pandoc}
 
@@ -62,7 +74,6 @@ The Markdown file, `pandoc` invocation, and associated filters used to create th
 
 The markdown file can be prefixed with a header in the YAML ("YAML Ain't Markup Language") format.
 Article data such as the title, relevant dates, author list, keywords, etc. is specified here.
-
 The `pandoc` template also derives the \aastex\ style information from this YAML header, via the `aastexops` entry.
 The YAML header given below is that used for the preparation of this document:
 
@@ -98,6 +109,7 @@ abstract: |
 
 Unwanted entries can be commented out with a `#` or safely deleted (here they have been commented so they appear for reference purposes).
 If a different style (e.g., `twocolumn`) is desired, this can be changed in `aastexopts`.
+YAML header entries and corresponding \TeX\ template code have been created to correspond to most (if not all) of the \aastex\ metadata options.
 
 ## Images {#sec:images}
 
