@@ -3,13 +3,13 @@
 Generate a `tex` file with:
 
 ```
-pandoc demo.md -s --template aastex62_template.tex -o demo.tex --filter pandoc-citeproc
+pandoc demo.md -s --template aastex62_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc
 ```
 
 Go straight to the pdf with:
 
 ```
-pandoc demo.md -s --template aastex62_template.tex -o demo.pdf --filter pandoc-citeproc  --pdf-engine=xelatex
+pandoc demo.md -s --template aastex62_template.tex -o demo.pdf -F pandoc-crossref -F pandoc-citeproc  --pdf-engine=xelatex
 ```
 
 The `demo.md` file contains a sample article describing the use of this template in generating AASTeX output via pandoc.
