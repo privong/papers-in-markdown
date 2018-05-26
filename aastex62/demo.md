@@ -84,7 +84,7 @@ We remind the reader that this approach can be extended to the templates of othe
 The markdown file can be prefixed with a header in the YAML ("YAML Ain't Markup Language") format.
 Article data such as the title, relevant dates, author list, keywords, etc. is specified here.
 This header information is extracted via a \TeX\ template file and passed through to the desired output file.
-The `pandoc` template also derives the \aastex\ style information from this YAML header, via the `aastexops` entry.
+The `pandoc` template also derives the \aastex\ style information from this YAML header, via the `aastexopts` entry.
 The YAML header given below is that used for the preparation of this document:
 
 ```{#yamlheader .yaml .numberLines}
@@ -153,6 +153,7 @@ Table: Number of imaginary thunderstorms in Gainesville, FL during the 21st week
 
 Citations can be incorporated using the pandoc-citeproc filter^[<https://pandoc.org/MANUAL.html#citations>].
 These citations take the form of: `[@Astropy2018]` to correspond to [@Astropy2018].
+`pandoc-citeproc` uses the Citation Style Language^[<https://citationstyles.org/>] to format citations.
 
 ## Equations {#sec:equations}
 
