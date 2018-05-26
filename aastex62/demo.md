@@ -6,7 +6,7 @@ received: "January 1, 2018"
 #revised: "January 7, 2018"
 #accepted: "\\today"
 #submitjournal: ApJ
-title: "Using Markdown and Pandoc to Write Articles in AASTeX"
+title: "Preparation of Articles using Markdown and Pandoc"
 shorttitle: Sample article
 shortauthors: Privon and Carberry
 author:
@@ -99,19 +99,37 @@ For example the \TeX\ for this document was generated with:
     pandoc demo.md -s --template aastex62_template.tex -o demo.tex \
                    -F pandoc-crossref -F pandoc-citeproc
 
-## Creating New Filters
+## Document Filters
 
 `pandoc` supports user-written filters.
 We have already seen two filters, `pandoc-citeproc` and `pandoc-crossref`.
-These filters enable customizable processing of documents during conversion and can be written in Haskell, lua, or python^[Using either the `panflute` or `pandocfilters` modules.].
+These filters enable customizable processing of documents during conversion.
+Commonly used langaues for this include Haskell, lua, and python^[Using either the `panflute` or `pandocfilters` modules.].
+Note that a lua parser is included with `pandoc` versions 2.0 and newer, and the use of lua filters is faster than other options.
 
-With output formats besides \aastex\ in mind, the acknowledgements portion of the document has been delineated in the markdown file as a top-level section.
+With output formats besides \aastex\ in mind, the acknowledgements portion of the document has been delineated in the markdown file as a macros: `{{acknowledgments}}`.
 However, is desirable to automatically convert this to a `\acknowledgements` macros when creating a \TeX\ file.
 As a filter demonstration, the following lua code performs this translation:
 
+```
+return {
+  {
+    Str = function (elem)
+      if elem.text == "{{acknowledgments}}" then
+        if string.find(FORMAT, "latex") then
+          return pandoc.RawInline("tex", "\\acknowledgements")
+        else
+          return elem
+        end
+      end
+    end,
+  }
+}
+```
 
-
-If can be invoked by adding `--lua-filter=filters/acknowledgments.lua` to the `pandoc` invocation.
+This filter is included as `aastex62/filters/acknowledgments.lua` in the template distribution.
+It can be used by with the `--lua-filter=` command-line argument.
+It can be extended easily to other formats, including say html.
 
 # Summary
 
@@ -120,8 +138,6 @@ This method is is easily extended to other resesarch journals.
 The advantage of this approach is improved ease of reading the source material and added flexibility for output formats.
 The template and demonstration text are made publicly available for use and enhancement by the community: <https://github.com/privong/papers-in-markdown>.
 
-
-
-# Acknowledgments
+{{acknowledgments}}
 
 G.C.P acknowledges support from the University of Florida.
