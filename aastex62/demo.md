@@ -87,7 +87,7 @@ This header information is extracted via a \TeX\ template file and passed throug
 The `pandoc` template also derives the \aastex\ style information from this YAML header, via the `aastexopts` entry.
 The YAML header given below is that used for the preparation of this document:
 
-```{#yamlheader .yaml .numberLines}
+```{#yamlheader .numberLines caption="YAML Header Example"}
 ---
 aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
@@ -200,7 +200,7 @@ With output formats besides \aastex\ in mind, the acknowledgments portion of the
 However, is desirable to automatically convert this to an `\acknowledgments` macro when creating a \TeX\ file.
 As a filter demonstration, the following lua code performs this translation:
 
-```{#ackfilter .lua .numberLines}
+```{#ackfilter .numberLines caption="lua filter code for acknowledgements replacement"}
 return {
   {
     Str = function (elem)
