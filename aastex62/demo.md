@@ -58,7 +58,46 @@ The Markdown file, `pandoc` invocation, and associated filters used to create th
 
 # Manuscript Preparation in Markdown {#sec:prep}
 
-## Manuscript styles {#sec:style}
+## Manuscript Metadata and Styles {#sec:style}
+
+The markdown file can be prefixed with a header in the YAML ("YAML Ain't Markup Language") format.
+Article data such as the title, relevant dates, author list, keywords, etc. is specified here.
+
+The `pandoc` template also derives the \aastex\ style information from this YAML header, via the `aastexops` entry.
+The YAML header given below is that used for the preparation of this document:
+
+```
+---
+aastexopts: [singlecolumn]
+preambleinput: ["macros.tex"]
+bibstyle: aasjournal
+received: "January 1, 2018"
+#revised: "January 7, 2018"
+#accepted: "\\today"
+#submitjournal: ApJ
+title: "Preparation of Articles using Markdown and Pandoc"
+shorttitle: "Articles in Markdown and Pandoc"
+shortauthors: Privon and Carberry
+author:
+- name: George C. Privon
+  ORCID: 0000-0003-3474-1125
+  affiliation: ["Department of Astronomy, University of Florida, 211 Bryant Space Sciences Center, \
+Gainesville, 32611 FL, USA"]
+  nocollaboration: 1
+- name: Josiah Carberry
+  ORCID: 0000-0002-1825-0097
+  affiliation: ["Wesleyan University, Middletown, CT", "Brown University: Providence, RI"]
+  collaboration: "(ORCID Demonstration)"
+keywords: [miscellaneous]
+software: ["[`pandoc`](http://pandoc.org)"]
+facility: []
+abstract: |
+  A short abstract.
+---
+```
+
+Unwanted entries can be commented out with a `#` or safely deleted (here they have been commented so they appear for reference purposes).
+If a different style (e.g., `twocolumn`) is desired, this can be changed in `aastexopts`.
 
 ## Images {#sec:images}
 
