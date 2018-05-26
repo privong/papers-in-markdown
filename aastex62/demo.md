@@ -36,7 +36,7 @@ abstract: |
 Manuscript preparation is an integral part of disseminating research.
 Currently papers are predominantly prepared in \latex\ or sometimes WYSIWYG editors such as Microsoft Word or Apple Pages.
 While powerful in their own ways, each of these have their own drawbacks.
-In particular \latex\ often suffers from a steep learning curve and crypic error messages while WYSIWYG editors have historically had sub-par mathematics rendering ability and suffered from difficulties with robust internal referencing.
+In particular \latex\ often suffers from a steep learning curve and cryptic error messages while WYSIWYG editors have historically had sub-par mathematics rendering ability and suffered from difficulties with robust internal referencing.
 
 Here we describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([@sec:markdown]) and using `pandoc` ([@sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX, Microsoft Word's `.docx`).
 This approach simplifies the writing process while retaining the power of \latex.
@@ -70,7 +70,7 @@ This includes how to specify the article style via the YAML header of the markdo
 We then demonstrate how to include images ([Section @sec:images]), tables ([Section @sec:tables]), and citations ([Section @sec:citations]).
 We the conclude by discussing some practical considerations for this paper writing process ([Section @sec:notes]).
 
-Throughout we assume the reader is familar with Markdown and do not discuss mMarkdown's text formatting.
+Throughout we assume the reader is familiar with Markdown and do not discuss markdown's text formatting.
 Instead we discuss the general behavior of the template file and actions which are necessary for generating \aastex-compatible output.
 
 The Markdown file, `pandoc` invocation, and associated filters used to create the \TeX\ for this document are available at: <https://github.com/privong/papers-in-markdown>.
