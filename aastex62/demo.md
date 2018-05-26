@@ -75,6 +75,7 @@ The Markdown file, `pandoc` invocation, and associated filters used to create th
 
 The markdown file can be prefixed with a header in the YAML ("YAML Ain't Markup Language") format.
 Article data such as the title, relevant dates, author list, keywords, etc. is specified here.
+This header information is extracted via a \TeX\ template file and passed through to the desired output file.
 The `pandoc` template also derives the \aastex\ style information from this YAML header, via the `aastexops` entry.
 The YAML header given below is that used for the preparation of this document:
 
@@ -117,7 +118,7 @@ YAML header entries and corresponding \TeX\ template code have been created to c
 
 ## Tables {#sec:tables}
 
-This tool will pass \latex tables through `pandoc` to the chosen \latex parser.
+This tool will pass \latex\ tables through `pandoc` to the chosen \latex\ parser.
 Thus, any tables which are part of \aastex will work for producing pdfs.
 However, those will not propagate through to other output formats with which `pandoc` is compatible.
 
@@ -141,6 +142,13 @@ Citations can be incorporated using the pandoc-citeproc filter^[<https://pandoc.
 These citations take the form of: `[@Astropy2018]` to correspond to [@Astropy2018].
 
 ## Equations {#sec:equations}
+
+Equations can be specified and labeled in the text. `$$e^{i\pi} + 1 = 0$$ {#eq:euler}` results in this output:
+
+$$e^{i\pi} + 1 = 0$$ {#eq:euler}
+
+And [@eq:euler] can subsequently be referenced.
+This method of specifying math and equations can be coupled with `pandoc`'s support for a variety of methods to render math in HTML^[<https://pandoc.org/MANUAL.html#math-rendering-in-html>].
 
 
 # Notes on Preparation for Submission {#sec:notes}
