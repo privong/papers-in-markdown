@@ -53,7 +53,7 @@ Describing Markdown is beyond this scope of this document, but we refer the read
 ## Pandoc {#sec:pandoc}
 
 `pandoc` is "a universal document converter"^[<https://pandoc.org>], originally written by John MacFarlane^[<http://johnmacfarlane.net/>].
-At present it supports 25 input formats and 47 output formats (including variations of several standards such as markdown).
+At present it supports 25 input formats and 47 output formats (including variations of several standards such as markdown) and supports user-defined output formats.
 Pandoc is written in the Haskell programming language and supports extensions written as filters.
 This template
 
@@ -69,9 +69,12 @@ This includes how to specify the article style via the YAML header of the markdo
 We then demonstrate how to include images ([@sec:images]), tables ([@sec:tables]), and citations ([@sec:citations]).
 We the conclude by discussing some practical considerations for this paper writing process ([@sec:notes]).
 
-We remind the reader that this approach can be extended to the templates of other journals by modifying the YAML header in the markdown file and the \TeX\ template file.
+Throughout we assume the reader is familar with Markdown and do not discuss mMarkdown's text formatting.
+Instead we discuss the general behavior of the template file and actions which are necessary for generating \aastex-compatible output.
 
 The Markdown file, `pandoc` invocation, and associated filters used to create the \TeX\ for this document are available at: <https://github.com/privong/papers-in-markdown>.
+We remind the reader that this approach can be extended to the templates of other journals by modifying the YAML header in the markdown file and the \TeX\ template file.
+
 
 # Manuscript Preparation in Markdown {#sec:prep}
 
