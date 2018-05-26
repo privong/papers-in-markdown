@@ -28,8 +28,9 @@ abstract: |
 
 This is a MNRAS Markdown template.
 It is similar to the aastex62 template, but modified to match 
-See the aastex demonstration for a description of how to use `pandoc` and Markdown together.
+See the aastex demonstration^[<https://github.com/privong/papers-in-markdown/tree/master/aastex62>] for a description of how to use `pandoc` and Markdown together.
 
 {{acknowledgments}}
 
 G.C.P. acknowledges support from the University of Florida.
+This work makes us of the `pandoc` universal document convertor^[<https://pandoc.org/>].
