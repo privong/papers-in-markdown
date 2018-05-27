@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>$title$</title>
+</head>
+<body>
+
+<header>
+<h1>$title$</h1>
+
+
+<p>
+$if(submitjournal)$
+Submitted to $submitjournal$.<br>
+$endif$
+
+$if(received)$
+Received: $received$;
+$endif$
+
+$if(revised)$
+Revised $revised$;
+$endif$
+
+$if(accepted)$
+Accepted $accepted$
+$endif$
+</p>
+
+<p>
+Authors: 
+$for(author)$
+    $author.name$
+    $if(author.affiliation)$
+    (
+    $for(author.affiliation)$
+    $author.affiliation$,
+    $endfor$
+    )
+    $endif$
+    ,
+$endfor$
+</p>
+
+$if(keywords)$
+<p>
+Keywords:
+$for(keywords)$
+$keywords$ ---
+$endfor$
+</p>
+$endif$
+</header>
+
+<main>
+$if(abstract)$
+<h2>Abstract</h2>
+<p>
+$abstract$
+</p>
+$endif$
+
+$body$
+
+</main>
+
+<footer>
+$if(software)$
+Software:
+$for(software)$
+$software$,
+$endfor$
+$endif$
+
+$if(facility)$
+Facilities: 
+$for(facility)$
+$facility$,
+$endfor$
+$endif$
+</footer>
+
+</body>
+</html>
