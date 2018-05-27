@@ -12,9 +12,9 @@ received: "January 1, 2018"
 #revised: "January 7, 2018"
 #accepted: "\\today"
 #submitjournal: ApJ
-title: "Preparation of Articles using Markdown and Pandoc"
+title: "Preparation of Articles using Markdown and Pandoc: General Description and Templates for AAS Journals and MNRAS"
 shorttitle: "Articles in Markdown and Pandoc"
-shortauthors: Privon and Carberry
+shortauthors: Privon
 author:
 - name: George C. Privon
   ORCID: 0000-0003-3474-1125
@@ -28,7 +28,7 @@ keywords: [miscellaneous]
 software: ["[`pandoc`](http://pandoc.org)"]
 facility: []
 abstract: |
-  Markdown provides a straightforward way to create articles and documentation in a form where the underlying text is easily readable, while also facilitating the generation of various other formats. This includes \TeX\, HTML, docx, and PDF (via \TeX) files. This article and the associated code describe a template which can be used to write articles in Markdown and use the `pandoc` software to convert the markdown text into an \aastex-compatible tex file for submission to the AAS Journals. The advantage of this approach is ease of readability for the source files and flexibility in output formats. We note that this approach can be applied to \TeX\ submissions for other journals and only requires the creation of an appropriate \TeX\ template file and modification of the YAML header of this demonstration document.
+  Markdown provides a straightforward way to create articles and documentation in a form where the underlying text is easily readable, while also facilitating the generation of various other formats. This includes \TeX\, HTML, docx, and PDF (via \TeX) files. This article and the associated code describe a template which can be used to write articles in Markdown and use the `pandoc` software to convert the markdown text into an \aastex-compatible tex file for submission to the AAS Journals. The advantage of this approach is ease of readability for the source files and flexibility in output formats. I note that this approach can be applied to \TeX\ submissions for other journals and only requires the creation of an appropriate \TeX\ template file and modification of the YAML header of this demonstration document.
 ---
 
 # Introduction {#sec:intro}
@@ -38,7 +38,7 @@ Currently papers are predominantly prepared in \latex\ or sometimes WYSIWYG edit
 While powerful in their own ways, each of these have their own drawbacks.
 In particular \latex\ often suffers from a steep learning curve and cryptic error messages while WYSIWYG editors have historically had sub-par mathematics rendering ability and suffered from difficulties with robust internal referencing.
 
-Here we describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([@sec:markdown]) and using `pandoc` ([@sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX, Microsoft Word's `.docx`).
+Here I describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([Section @sec:markdown]) and using `pandoc` ([Section @sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX, Microsoft Word's `.docx`).
 This approach simplifies the writing process while retaining the power of \latex.
 
 ## Markdown {#sec:markdown}
@@ -49,12 +49,13 @@ Markdown was originally intended to specify a plain text format which could be c
 > A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. – John Gruber
 
 Since its release Markdown (and its various flavors) have been extended and become widely used, and additional output formats have become supported ([Section @sec:pandoc]).
-Describing Markdown is beyond this scope of this document, but we refer the reader to the `pandoc` markdown description^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] and Gruber's original specification.
+Describing Markdown is beyond this scope of this document, but I refer the reader to the `pandoc` markdown description^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] and Gruber's original specification.
 
 ## Pandoc {#sec:pandoc}
 
 `pandoc` is "a universal document converter"^[<https://pandoc.org>], originally written by John MacFarlane^[<http://johnmacfarlane.net/>].
-At present it supports 25 input formats and 47 output formats (including variations of several standards such as markdown) and supports user-defined output formats.
+At present it supports 25 input formats and 47 output formats (including variations of several standards such as markdown).
+Additional formats can be supported by providing user-defined writers, written in the lua language.
 `pandoc` is written in the Haskell programming language and supports extensions written as filters.
 This template
 
@@ -65,16 +66,16 @@ Pandoc filers^[<https://pandoc.org/filters.html>] may be crafted to convert simp
 
 ## Paper Organization
 
-We broadly divide this article into demonstrations of how to prepare a manuscript in Markdown such that it generates nearly-submittable \TeX\ ([Section @sec:prep]).
+I broadly divide this article into demonstrations of how to prepare a manuscript in Markdown such that it generates nearly-submittable \TeX\ ([Section @sec:prep]).
 This includes how to specify the article style via the YAML header of the markdown file ([Section @sec:style]).
-We then demonstrate how to include images ([Section @sec:images]), tables ([Section @sec:tables]), and citations ([Section @sec:citations]).
-We the conclude by discussing some practical considerations for this paper writing process ([Section @sec:notes]).
+I then demonstrate how to include images ([Section @sec:images]), tables ([Section @sec:tables]), and citations ([Section @sec:citations]).
+I conclude by discussing some practical considerations for this paper writing process ([Section @sec:notes]).
 
-Throughout we assume the reader is familiar with Markdown and do not discuss markdown's text formatting.
-Instead we discuss the general behavior of the template file and actions which are necessary for generating \aastex-compatible output.
+Throughout I assume the reader is familiar with Markdown and do not discuss markdown's text formatting.
+Instead I discuss the general behavior of the template file and actions which are necessary for generating \aastex-compatible output.
 
 The Markdown file, `pandoc` invocation, and associated filters used to create the \TeX\ for this document are available at: <https://github.com/privong/papers-in-markdown>.
-We remind the reader that this approach can be extended to the templates of other journals by modifying the YAML header in the markdown file and the \TeX\ template file.
+I remind the reader that this approach can be extended to the templates of other journals by modifying the YAML header in the markdown file and the \TeX\ template file.
 
 
 # Manuscript Preparation in Markdown {#sec:prep}
@@ -104,17 +105,17 @@ received: "January 1, 2018"
 #submitjournal: ApJ
 title: "Preparation of Articles using Markdown and Pandoc"
 shorttitle: "Articles in Markdown and Pandoc"
-shortauthors: Privon and Carberry
+shortauthors: Privon
 author:
 - name: George C. Privon
   ORCID: 0000-0003-3474-1125
   affiliation: ["Department of Astronomy, University of Florida, 211 Bryant Space Sciences Center, \
 Gainesville, 32611 FL, USA"]
   nocollaboration: 1
-- name: Josiah Carberry
-  ORCID: 0000-0002-1825-0097
-  affiliation: ["Wesleyan University, Middletown, CT", "Brown University: Providence, RI"]
-  collaboration: "(ORCID Demonstration)"
+#- name: Josiah Carberry
+#  ORCID: 0000-0002-1825-0097
+#  affiliation: ["Wesleyan University, Middletown, CT", "Brown University: Providence, RI"]
+#  collaboration: "(ORCID Demonstration)"
 keywords: [miscellaneous]
 software: ["[`pandoc`](http://pandoc.org)"]
 facility: []
@@ -129,16 +130,15 @@ YAML header entries and corresponding \TeX\ template code have been created to c
 
 ## Images {#sec:images}
 
-Images can be included, captioned, and labeled:
-
-![A r-band image of dm1647+21 in grayscale with a lookalike N-body simulation overlaid as the colored points. From @Privon2017b.](images/dm1647.png){#fig:dm1647 width=3in height=3in}
-
-[Figure @fig:dm1647] was included as:
+Images can be included, captioned, and labeled.
+A demonstration is [Figure @fig:dm1647], which was included as:
 
 ```
 ![A r-band image of dm1647+21 in grayscale with a lookalike N-body simulation overlaid as \
 the colored points. From @Privon2017b.](images/dm1647.png){#fig:dm1647 width=3in height=3in}
 ```
+
+![A r-band image of dm1647+21 in grayscale with a lookalike N-body simulation overlaid as the colored points. From @Privon2017b.](images/dm1647.png){#fig:dm1647 width=3in height=3in}
 
 ## Tables {#sec:tables}
 
@@ -225,7 +225,7 @@ A opportunity for this is to write a filter that takes the markdown "simple tabl
 
 # Summary
 
-We have provided a brief demonstration for a method of writing research articles in Markdown and converting them to an \aastex-compatible format for submission to AAS Journals.
+I have provided a brief demonstration for a method of writing research articles in Markdown and converting them to an \aastex-compatible format for submission to AAS Journals.
 This method is easily extended to other research journals.
 The advantage of this approach is improved ease of reading the source material and added flexibility for output formats.
 The template and demonstration text are made publicly available for use and enhancement by the community: <https://github.com/privong/papers-in-markdown>.
