@@ -111,7 +111,7 @@ author:
   ORCID: 0000-0003-3474-1125
   affiliation: ["Department of Astronomy, University of Florida, 211 Bryant Space Sciences Center, \
 Gainesville, 32611 FL, USA"]
-  nocollaboration: 1
+#  nocollaboration: 1
 #- name: Josiah Carberry
 #  ORCID: 0000-0002-1825-0097
 #  affiliation: ["Wesleyan University, Middletown, CT", "Brown University: Providence, RI"]
