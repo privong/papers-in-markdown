@@ -33,3 +33,5 @@ See the aastex demonstration^[<https://github.com/privong/papers-in-markdown/tre
 
 G.C.P. acknowledges support from the University of Florida.
 This work makes us of the `pandoc` universal document convertor^[<https://pandoc.org/>].
+
+{{end_acknowledgments}}
