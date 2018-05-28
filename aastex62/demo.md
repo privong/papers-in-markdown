@@ -28,7 +28,7 @@ keywords: [miscellaneous]
 software: ["[`pandoc`](http://pandoc.org)"]
 facility: []
 abstract: |
-  Markdown provides a straightforward way to create articles and documentation in a form where the underlying text is easily readable, while also facilitating the generation of various other formats. This includes \TeX\, HTML, docx, and PDF (via \TeX) files. This article and the associated code describe a template which can be used to write articles in Markdown and use the `pandoc` software to convert the markdown text into an \aastex-compatible tex file for submission to the AAS Journals. The advantage of this approach is ease of readability for the source files and flexibility in output formats. I note that this approach can be applied to \TeX\ submissions for other journals and only requires the creation of an appropriate \TeX\ template file and modification of the YAML header of this demonstration document.
+  Markdown provides a straightforward way to create articles and documentation in a form where the underlying text is easily readable, while also facilitating the generation of various other formats. This includes \TeX\, HTML, docx, and PDF (via \TeX) files. This article and the associated code describe a template which can be used to write articles in Markdown and use the `pandoc` software to convert the Markdown text into an \aastex-compatible tex file for submission to the AAS Journals. The advantage of this approach is ease of readability for the source files and flexibility in output formats. I note that this approach can be applied to \TeX\ submissions for other journals and only requires the creation of an appropriate \TeX\ template file and modification of the YAML header of this demonstration document.
 ---
 
 # Introduction {#sec:intro}
@@ -50,17 +50,17 @@ Markdown was originally intended to specify a plain text format which could be c
 
 Since its release, Markdown (and its various flavors) have been extended and become widely used.
 Describing Markdown is beyond this scope of this document.
-I assume the reader is familiar with the synxatx and refer the reader to the `pandoc` markdown description^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] and Gruber's original specification.
+I assume the reader is familiar with the synxatx and refer the reader to the `pandoc` Markdown description^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] and Gruber's original specification.
 
 ## Pandoc {#sec:pandoc}
 
 `pandoc` is "a universal document converter"^[<https://pandoc.org>], originally written by John MacFarlane^[<http://johnmacfarlane.net/>].
-At present it supports 25 input formats and 47 output formats (including variations of several standards such as markdown).
+At present it supports 25 input formats and 47 output formats (including variations of several standards such as Markdown).
 Additional formats can be supported by providing user-defined writers, written in the lua language.
 `pandoc` is written in the Haskell programming language and supports extensions written as filters.
 This template
 
-Note that the author can write \TeX\ into the markdown file and `pandoc` will happily pass it through to the finished product.
+Note that the author can write \TeX\ into the Markdown file and `pandoc` will happily pass it through to the finished product.
 However, this may compromise alternate (non-\TeX) output formats.
 For example, the \aastex `deluxetable` environment can be used, but will not properly render in non-\TeX\ formats.
 Pandoc filers^[<https://pandoc.org/filters.html>] may be crafted to convert simple `pandoc` tables into `deluxetable`s on the fly, if desired.
@@ -68,22 +68,22 @@ Pandoc filers^[<https://pandoc.org/filters.html>] may be crafted to convert simp
 ## Paper Organization
 
 I broadly divide this article into demonstrations of how to prepare a manuscript in Markdown such that it generates nearly-submittable \TeX\ ([Section @sec:prep]).
-This includes how to specify the article style via the YAML header of the markdown file ([Section @sec:style]).
+This includes how to specify the article style via the YAML header of the Markdown file ([Section @sec:style]).
 I then demonstrate how to include images ([Section @sec:images]), tables ([Section @sec:tables]), and citations ([Section @sec:citations]).
 I conclude by discussing some practical considerations for this paper writing process ([Section @sec:notes]).
 
-Throughout I assume the reader is familiar with Markdown and do not discuss markdown's text formatting.
+Throughout I assume the reader is familiar with Markdown and do not discuss Markdown's text formatting.
 Instead I discuss the general behavior of the template file and actions which are necessary for generating \aastex-compatible output.
 
 The Markdown file, `pandoc` invocation, and associated filters used to create the \TeX\ for this document are available at: <https://github.com/privong/papers-in-markdown>.
-I remind the reader that this approach can be extended to the templates of other journals by modifying the YAML header in the markdown file and the \TeX\ template file.
+I remind the reader that this approach can be extended to the templates of other journals by modifying the YAML header in the Markdown file and the \TeX\ template file.
 
 
 # Manuscript Preparation in Markdown {#sec:prep}
 
 ## Manuscript Metadata and Styles {#sec:style}
 
-The markdown file can be prefixed with a header in the YAML ("YAML Ain't Markup Language") format.
+The Markdown file can be prefixed with a header in the YAML ("YAML Ain't Markup Language") format.
 Article data such as the title, relevant dates, author list, keywords, etc. is specified here.
 This header information is extracted via a \TeX\ template file and passed through to the desired output file.
 The `pandoc` template also derives the \aastex\ style information from this YAML header, via the `aastexopts` entry.
@@ -209,7 +209,7 @@ These filters enable customized processing of documents during conversion.
 Commonly used languages for this include Haskell, lua, and python^[Using either the `panflute` or `pandocfilters` modules.].
 Note that a lua parser is included with `pandoc` versions 2.0 and newer, and the use of lua filters is faster than other options.
 
-With output formats besides \aastex\ in mind, the acknowledgments portion of the document has been delineated in the markdown file as a macros: `{{acknowledgments}}`.
+With output formats besides \aastex\ in mind, the acknowledgments portion of the document has been delineated in the Markdown file as a macros: `{{acknowledgments}}`.
 However, is desirable to automatically convert this to an `\acknowledgments` macro when creating a \TeX\ file.
 As a filter demonstration, the following lua code performs this translation:
 
@@ -233,8 +233,8 @@ This filter is included as `aastex62/filters/acknowledgments.lua` in the templat
 It can be used with the `--lua-filter=` command-line argument.
 This filer be easily extended to other output formats, including HTML.
 
-Generally, creation of filters would be more broadly useful in automating the conversion of markdown files into journal-compatible \TeX.
-A opportunity for this is to write a filter that takes the markdown "simple table" format and converts it into an \aastex\ `deluxetable`.
+Generally, creation of filters would be more broadly useful in automating the conversion of Markdown files into journal-compatible \TeX.
+A opportunity for this is to write a filter that takes the Markdown "simple table" format and converts it into an \aastex\ `deluxetable`.
 
 # Summary
 

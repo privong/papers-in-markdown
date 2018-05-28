@@ -1,6 +1,6 @@
 # Papers in Markdown
 
-It might be nice to write astronomy papers in markdown instead of directly in TeX.
+It might be nice to write astronomy papers in Markdown instead of directly in TeX.
 This is a set of templates for [pandoc](https://pandoc.org/) to enable that.
 
 There is currently support for [AASTeX](https://journals.aas.org/authors/aastex/), [MNRAS](https://academic.oup.com/mnras/), and [A&A](https://www.aanda.org/).
