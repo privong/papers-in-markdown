@@ -18,7 +18,7 @@ Templates are included for the following journals:
 * [aa](aa/): [Astronomy & Astrophysics](https://www.aanda.org/)
 
 Note that the aastex62 template has the most descriptive information while the others are relatively bare-bones.
-Additionally, the necessary style files are *not* included in this distribution; you must obtain those from the relevant journal's webpage.
+Additionally, the necessary style files are *not* included in this distribution; you must obtain those from the relevant journal.
 
 # Licensing
 
