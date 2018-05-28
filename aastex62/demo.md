@@ -12,7 +12,7 @@ received: "January 1, 2018"
 #revised: "January 7, 2018"
 #accepted: "\\today"
 #submitjournal: ApJ
-title: "Preparation of Articles using Markdown and Pandoc: General Description and Templates for AAS Journals and MNRAS"
+title: "Preparation of Articles using Markdown and Pandoc: General Description and Templates"
 shorttitle: "Articles in Markdown and Pandoc"
 shortauthors: Privon
 author:
@@ -44,12 +44,13 @@ This approach simplifies the writing process while retaining the power of \latex
 ## Markdown {#sec:markdown}
 
 The Markdown specification was released by John Gruber in 2004^[<https://daringfireball.net/projects/markdown/>].
-Markdown was originally intended to specify a plain text format which could be converted to HTML but in which the source could easily be read:
+Markdown was originally intended to specify a plain text format which could be converted to HTML, with the motivation that:
 
 > A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. – John Gruber
 
-Since its release Markdown (and its various flavors) have been extended and become widely used, and additional output formats have become supported ([Section @sec:pandoc]).
-Describing Markdown is beyond this scope of this document, but I refer the reader to the `pandoc` markdown description^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] and Gruber's original specification.
+Since its release, Markdown (and its various flavors) have been extended and become widely used.
+Describing Markdown is beyond this scope of this document.
+I assume the reader is familiar with the synxatx and refer the reader to the `pandoc` markdown description^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] and Gruber's original specification.
 
 ## Pandoc {#sec:pandoc}
 
@@ -178,7 +179,19 @@ This method of specifying math and equations can be coupled with `pandoc`'s supp
 
 # Notes on Preparation for Submission {#sec:notes}
 
-## Limitations on Internal References
+## Available Templates
+
+I have created templates and demonstration files for the AAS Journals, Monthly Notices of the Royal Astronomical Society, and Astronomy & Astrophysics.
+The AAS Journals example (which you are reading now) is the most complete, while the others are bare-bones and intended to constitute a minimal starting point.
+However, the Markdown used to generate this article should work in the demonstration files for the other journals.
+
+The templates are different because each journal has different options and handling of author lists, abstracts, and metadata.
+For example collaboration information can be provded to AAS Journals, but not to MNRAS or A&A.
+Hence it makes some sense to keep the Markdown templates separate for these journals.
+However, if a manuscript is prepared using the Markdown template for A&A but the authors later decide to submit to MNRAS, the only major changes needed will be to the YAML header in the Markdown file.
+So this method of manuscript preparation may be somewhat more flexible than directly writing the document in \TeX.
+
+## Internal References
 
 Naively `pandoc` does not presently support internal reference to figures or equations and does not support numbered section references.
 However the `pandoc-crossref`^[<https://github.com/lierdakil/pandoc-crossref>] filter adds support for this (and has been used in the preparation of this document).
