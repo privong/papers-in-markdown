@@ -6,7 +6,7 @@ This is a set of templates for [pandoc](https://pandoc.org/) to enable that.
 There is currently support for [AASTeX](https://journals.aas.org/authors/aastex/), [MNRAS](https://academic.oup.com/mnras/), and [A&A](https://www.aanda.org/).
 I welcome contributions for other journals.
 
-In case you are hesitant about committing to Markdown when writing your papers, should you eventually come to a point where it seems easier to do something in LaTeX, pandoc will pass LaTeX through so you can directly embedd it into the Markdown file.
+In case you are hesitant about committing to Markdown when writing your papers, if you eventually come to a point where it seems easier to do something in LaTeX, pandoc will pass LaTeX through so you can directly embedd it into the Markdown file.
 Alternately you can convert the Markdown file into a LaTeX file and simply pick up editing the LaTeX directly as if you had been writing in LaTeX all along.
 
 ## Journal Templates
