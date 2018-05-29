@@ -15,7 +15,7 @@ Templates are included for the following journals:
 
 * [aastex62](aastex62/): use for all [American Astronomical Society Journals](https://aas.org/publications/publishing)
 * [MNRAS](mnras/): [Monthly Notices of the Royal Astronomical Society](https://academic.oup.com/mnras/)
-* [aa](aa/): [Astronomy & Astrophysics](https://www.aanda.org/)
+* [aa](aa/): [Astronomy & Astrophysics](https://www.aanda.org/) (both traditional and structured abstracts)
 
 Note that the aastex62 template has the most descriptive information while the others are relatively bare-bones.
 Additionally, the necessary style files are *not* included in this distribution; you must obtain those from the relevant journal.
