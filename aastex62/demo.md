@@ -8,7 +8,7 @@ texpackages:
 #  opts:
 bibstyle: aasjournal
 bibliography: demo.bib
-received: "January 1, 2018"
+received: "\\today"
 #revised: "January 7, 2018"
 #accepted: "\\today"
 #submitjournal: ApJ
@@ -28,7 +28,12 @@ keywords: [miscellaneous]
 software: ["[`pandoc`](http://pandoc.org)"]
 facility: []
 abstract: |
-  Markdown provides a straightforward way to create articles and documentation in a form where the underlying text is easily readable, while also facilitating the generation of various other formats. This includes \TeX\, HTML, docx, and PDF (via \TeX) files. This article and the associated code describe a template which can be used to write articles in Markdown and use the `pandoc` software to convert the Markdown text into an \aastex-compatible tex file for submission to the AAS Journals. The advantage of this approach is ease of readability for the source files and flexibility in output formats. I note that this approach can be applied to \TeX\ submissions for other journals and only requires the creation of an appropriate \TeX\ template file and modification of the YAML header of this demonstration document.
+  The Markdown format can be used to create articles with easily readable plain-text source while making it easy to translate to other formats (e.g., \TeX\, HTML, docx, and PDF [via \TeX]).
+  This article announces and briefly describes templates and code which can use the `pandoc` software to convert Markdown into journal-compatible \TeX.
+  The advantage of this approach is ease of readability of the source files and flexibility in output formats (e.g., for output to HTML).
+  This article describes and demonstrates this technique for \aastex\ output, however the source repository also includes barebones examples for MNRAS and A\&A.
+  I am releasing the code and templates under free software / open culture licenses.
+  Other journals or output formats only require the creation of new template files and/or modifications of the YAML header for the Markdown source.
 ---
 
 # Introduction {#sec:intro}
