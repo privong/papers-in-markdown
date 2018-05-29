@@ -39,15 +39,15 @@ abstract: |
 # Introduction {#sec:intro}
 
 Manuscript preparation is an integral part of disseminating research.
-Currently papers are predominantly prepared in \latex\ or WYSIWYG^["What you see is what you get"] editors such as Microsoft Word or Apple Pages.
+Currently papers are predominantly prepared in \LaTeX\ or WYSIWYG^["What you see is what you get"] editors such as Microsoft Word or Apple Pages.
 While powerful in their own ways, each of these have their own drawbacks.
-\latex\ often suffers from a steep learning curve and cryptic error messages.
+\LaTeX\ often suffers from a steep learning curve and cryptic error messages.
 On the other hand, WYSIWYG editors have historically had sub-par mathematics rendering ability and suffered from difficulties with robust internal referencing.
 A secondary consideration is that output to other formats (e.g., HTML) can be tedious and/or require a significant investment in tooling.
 This latter effect potentially harms dissemination of scientific results.
 
-Here I describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([Section @sec:markdown]) and using `pandoc` ([Section @sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX or `.docx`).
-This approach simplifies the writing process while retaining the power of \latex's formulae and making internal references easy.
+Here I describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([Section @sec:markdown]) and using `pandoc` ([Section @sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX\ or `.docx`).
+This approach simplifies the writing process while retaining the power of \LaTeX's formulae and making internal references easy.
 
 ## Markdown {#sec:markdown}
 
@@ -61,13 +61,13 @@ While describing Markdown is beyond this scope of this document [Table @tbl:mu_e
 
 Markup      Notation
 ----------- -------------------------
-\latex      `\emph{emphasize this}`
+\LaTeX      `\emph{emphasize this}`
 HTML        `<em>emphasize this</em>`
 Markdown    `_emphasize this_`
 
 Table: Emphasizing text in several markup specifications. {#tbl:mu_emphasis}
 
-In comparison to \TeX and HTML, Markdown's emphasis method is less visually intrusive, making it easier to read the source.
+In comparison to \TeX\ and HTML, Markdown's emphasis method is less visually intrusive, making it easier to read the source.
 For the remainder of the document I assume the reader is familiar with synxatx of Markdown.
 This set of templates specifically utilizes the `pandoc` Markdown flavor^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] which has some differences and extensions compared to Gruber's original specification.
 
@@ -162,7 +162,7 @@ the colored points. From @Privon2017b.](images/dm1647.png){#fig:dm1647 width=3in
 
 ## Tables {#sec:tables}
 
-This tool will pass \latex\ tables through `pandoc` to the chosen \latex\ parser.
+This tool will pass \LaTeX\ tables through `pandoc` to the chosen \LaTeX\ parser.
 Thus, any tables which are part of \aastex will work for producing pdfs.
 However, those will not propagate through to other output formats with which `pandoc` is compatible.
 
