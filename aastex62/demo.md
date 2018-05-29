@@ -28,34 +28,48 @@ keywords: [miscellaneous]
 software: ["[`pandoc`](http://pandoc.org)"]
 facility: []
 abstract: |
-  The Markdown format can be used to create articles with easily readable plain-text source while making it easy to translate to other formats (e.g., \TeX\, HTML, docx, and PDF [via \TeX]).
-  This article announces and briefly describes templates and code which can use the `pandoc` software to convert Markdown into journal-compatible \TeX.
-  The advantage of this approach is ease of readability of the source files and flexibility in output formats (e.g., for output to HTML).
+  Markdown is a markup format that can be used to create articles with readable source while making it easy to translate to other formats (e.g., \TeX\, HTML, docx, and PDF [via \TeX]).
+  In this article I announce and briefly describes templates and code which use the `pandoc` software to convert Markdown into journal-compatible \TeX.
+  The advantage of this approach is ease of readability of the source files and flexibility in output formats (e.g., for later output to HTML).
   This article describes and demonstrates this technique for \aastex\ output, however the source repository also includes barebones examples for MNRAS and A\&A.
   I am releasing the code and templates under free software / open culture licenses.
-  Other journals or output formats only require the creation of new template files and/or modifications of the YAML header for the Markdown source.
+  Applying this to additional journals or output formats requires the creation of new template files and/or modifications of the YAML header for the Markdown source.
 ---
 
 # Introduction {#sec:intro}
 
 Manuscript preparation is an integral part of disseminating research.
-Currently papers are predominantly prepared in \latex\ or sometimes WYSIWYG editors such as Microsoft Word or Apple Pages.
+Currently papers are predominantly prepared in \latex\ or WYSIWYG^["What you see is what you get"] editors such as Microsoft Word or Apple Pages.
 While powerful in their own ways, each of these have their own drawbacks.
-In particular \latex\ often suffers from a steep learning curve and cryptic error messages while WYSIWYG editors have historically had sub-par mathematics rendering ability and suffered from difficulties with robust internal referencing.
+\latex\ often suffers from a steep learning curve and cryptic error messages.
+On the other hand, WYSIWYG editors have historically had sub-par mathematics rendering ability and suffered from difficulties with robust internal referencing.
+A secondary consideration is that output to other formats (e.g., HTML) can be tedious and/or require a significant investment in tooling.
+This latter effect potentially harms dissemination of scientific results.
 
-Here I describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([Section @sec:markdown]) and using `pandoc` ([Section @sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX, Microsoft Word's `.docx`).
-This approach simplifies the writing process while retaining the power of \latex.
+Here I describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([Section @sec:markdown]) and using `pandoc` ([Section @sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX or `.docx`).
+This approach simplifies the writing process while retaining the power of \latex's formulae and making internal references easy.
 
 ## Markdown {#sec:markdown}
 
-The Markdown specification was released by John Gruber in 2004^[<https://daringfireball.net/projects/markdown/>].
-Markdown was originally intended to specify a plain text format which could be converted to HTML, with the motivation that:
+Markdown is a markup format that was originally intended to specify a plain text format which could be converted to HTML, with the motivation that:
 
 > A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. – John Gruber
 
-Since its release, Markdown (and its various flavors) have been extended and become widely used.
-Describing Markdown is beyond this scope of this document.
-I assume the reader is familiar with the synxatx and refer the reader to the `pandoc` Markdown description^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] and Gruber's original specification.
+The Markdown specification was released by John Gruber in 2004^[<https://daringfireball.net/projects/markdown/>] and since its release, Markdown (and variants) has become widely used.
+It aspires to "get out of the way and let people write" by utilizing minimally intrusive text formatting notation.
+While describing Markdown is beyond this scope of this document [Table @tbl:mu_emphasis] provides a demonstration of how one might emphasize text in a few different markup formats.
+
+Markup      Notation
+----------- -------------------------
+\latex      `\emph{emphasize this}`
+HTML        `<em>emphasize this</em>`
+Markdown    `_emphasize this_`
+
+Table: Emphasizing text in several markup specifications. {#tbl:mu_emphasis}
+
+In comparison to \TeX and HTML, Markdown's emphasis method is less visually intrusive, making it easier to read the source.
+For the remainder of the document I assume the reader is familiar with synxatx of Markdown.
+This set of templates specifically utilizes the `pandoc` Markdown flavor^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] which has some differences and extensions compared to Gruber's original specification.
 
 ## Pandoc {#sec:pandoc}
 
