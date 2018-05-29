@@ -30,7 +30,7 @@ It's certainly possible, but it would add another level of `if/elseif/else` to t
 These templates require:
 
 - [pandoc](https://pandoc.org)
-- A (La)TeX typesetting engine (If you want to actually make a PDF instead of just stopping at TeX source.
+- A (La)TeX typesetting engine (If you want to actually make a PDF instead of just stopping at TeX source)
 
 Technically optional (but I have never seen a paper without citations and in-text references) you will also want:
 
