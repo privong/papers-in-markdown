@@ -84,7 +84,7 @@ In order to convert Markdown source into a \TeX\ file which is compatible with j
 Note that the author can write \TeX\ directly into the Markdown file and `pandoc` will happily pass it through to the finished product.
 However, this may compromise alternate (non-\TeX) output formats.
 For example, the \aastex\ `deluxetable` environment can be used, but it will not be rendered as a table in non-\TeX\ formats and will instead be displayed as the raw \TeX\ source (or worse).
-Pandoc filers^[<https://pandoc.org/filters.html>] can be crafted to convert simple `pandoc` tables into `deluxetable`s on the fly, if desired.
+Pandoc filters^[<https://pandoc.org/filters.html>] can be crafted to convert simple `pandoc` tables into `deluxetable`s on the fly, if desired.
 
 ## Paper Organization
 
@@ -306,4 +306,4 @@ Comments, bug reports, and enhancements are welcome.
 
 {{acknowledgments}}
 
-G.C.P acknowledges support from the University of Florida.
+I thank Kelly Hondula for comments on this manuscript and acknowledge support from the University of Florida.
