@@ -68,7 +68,7 @@ Markdown    `_emphasize this_`
 Table: Emphasizing text in several markup specifications. {#tbl:mu_emphasis}
 
 In comparison to \TeX\ and HTML, Markdown's emphasis method is less visually intrusive, making it easier to read the source.
-For the remainder of the document I assume the reader is familiar with synxatx of Markdown.
+For the remainder of the document I assume the reader is familiar with syntax of Markdown.
 This set of templates specifically utilizes the `pandoc` Markdown flavor^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] which has some differences and extensions compared to Gruber's original specification.
 
 ## Pandoc {#sec:pandoc}
@@ -77,7 +77,7 @@ This set of templates specifically utilizes the `pandoc` Markdown flavor^[<https
 It currently supports 25 input formats and 47 output formats (including variations of standards).
 Additional formats can be supported by providing user-defined writers, written in the lua language.
 `pandoc` is written in the Haskell programming language and supports extensions written as filters.
-During the document conversion `pandoc` can use additional metadata specific in a YAML ("YAML Ain't Markup Languge") header.
+During the document conversion `pandoc` can use additional metadata specific in a YAML ("YAML Ain't Markup Language") header.
 This header can either be prepended to the Markdown text or incorporated from a separate file.
 
 In order to convert Markdown source into a \TeX\ file which is compatible with journal submission requirements I have created a set of templates which instruct `pandoc` in how to generate the output.
@@ -243,7 +243,7 @@ The AAS Journals example (which you are reading now) is the most complete, while
 However, the Markdown used to generate this article should work in the demonstration files for the other journals.
 
 The templates are different because each journal has different options and handling of author lists, abstracts, and metadata.
-For example collaboration information can be provded to AAS Journals, but not to MNRAS or A&A.
+For example collaboration information can be provided to AAS Journals, but not to MNRAS or A&A.
 Hence it makes some sense to keep the Markdown templates separate for these journals.
 However, if a manuscript is prepared using the Markdown template for A&A but the authors later decide to submit to MNRAS, the only major changes needed will be to the YAML header in the Markdown file.
 
@@ -256,7 +256,7 @@ Note that a lua parser is included with `pandoc` versions 2.0 and newer, and the
 
 Simple filters are straightforward to construct and I demonstrate one here.
 With output formats besides \aastex\ in mind, the acknowledgments portion of the document has been delineated in the Markdown file as a macro: `{{acknowledgments}}`.
-However it is desirable to automatically convert this to the \TeX\ source appropriate for the jounral's template.
+However it is desirable to automatically convert this to the \TeX\ source appropriate for the journal's template.
 For \aastex\, this is the `\acknowledgments` macro.
 The following filter, written in lua, performs this translation when included as part of the `pandoc` invocation:
 
