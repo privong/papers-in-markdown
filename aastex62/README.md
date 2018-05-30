@@ -3,13 +3,13 @@
 Generate a TeX file with:
 
 ```
-pandoc demo.md -s --template aastex62_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --no-highlight --natbib
+pandoc demo.md -s --template aastex62_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --natbib --listings
 ```
 
 Go straight to the pdf with:
 
 ```
-pandoc demo.md -s --template aastex62_template.tex -o demo.pdf -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --pdf-engine=xelatex --no-highlight
+pandoc demo.md -s --template aastex62_template.tex -o demo.pdf -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --pdf-engine=xelatex --listings
 ```
 
 The [`demo.md`](demo.md) file contains a sample article describing the use of this template in generating AASTeX output via pandoc.
