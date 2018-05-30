@@ -287,7 +287,7 @@ An opportunity for this is to write a filter that takes the Markdown "simple tab
 ## Internal References
 
 Naively `pandoc` does not support internal reference to figures or equations and does not support numbered section references.
-However the `pandoc-crossref`^[<https://github.com/lierdakil/pandoc-crossref>] filter adds support for this (and has been used in the preparation of this document).
+However the `pandoc-crossref` filter adds support for this (and has been used in the preparation of this document).
 `pandoc-crossref` uses the same syntax as `pandoc-citeproc`, so adds little cognitive overhead in inter-document referencing.
 However in order avoid `pandoc-citeproc` processing internal references, `pandoc-crossref` must be invoked first.
 
