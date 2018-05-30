@@ -25,7 +25,7 @@ author:
 #  affiliation: ["Department of Psychoceramics, Wesleyan University, Middletown, CT", "Department of Psychoceramics, Brown University: Providence, RI"]
 #  collaboration: "(ORCID Demonstration)"
 keywords: [miscellaneous]
-software: ["[`pandoc`](http://pandoc.org)"]
+software: ["[`pandoc`](http://pandoc.org)", "[`pandoc-citeproc`](https://github.com/jgm/pandoc-citeproc)", "[`pandoc-crossref`](https://github.com/lierdakil/pandoc-crossref)"]
 facility: []
 abstract: |
   Markdown is a markup format that can be used to create articles with readable source while making it easy to translate to other formats (e.g., \TeX\, HTML, docx, and PDF [via \TeX]).
@@ -293,9 +293,10 @@ However in order avoid `pandoc-citeproc` processing internal references, `pandoc
 # Summary
 
 I have provided a brief demonstration for a method of writing research articles in Markdown and converting them to an \aastex-compatible format for submission to AAS Journals.
-This method is easily extended to other research journals.
-The advantage of this approach is improved ease of reading the source material and added flexibility for output formats.
-The template and demonstration text are made publicly available for use and enhancement by the community: <https://github.com/privong/papers-in-markdown>.
+The accompanying template and source code release also includes templates for MNRAS and A&A.
+The advantage of this approach is improved readability of the source files and added flexibility in output formats.
+The latter makes it easier for authors to share HTML and/or EPUB versions of manuscripts, potentially improving uptake.
+I have made the templates and demonstration text publicly available for use and enhancement by the community: <https://github.com/privong/papers-in-markdown>.
 
 {{acknowledgments}}
 
