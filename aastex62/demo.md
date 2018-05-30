@@ -183,7 +183,7 @@ the colored points. From @Privon2017b.](images/dm1647.png){#fig:dm1647 width=3in
 ## Tables {#sec:tables}
 
 This tool will pass \LaTeX\ tables through `pandoc` to the chosen \LaTeX\ parser.
-Thus, any tables which are part of \aastex\ will work for producing pdfs.
+Thus, any tables which are part of \aastex\ will work for producing PDFs.
 However, those will not propagate through to other output formats with which `pandoc` is compatible.
 
 [Table @tbl:storms] is an example of a `pandoc` Markdown "simple table".
@@ -289,6 +289,12 @@ Naively `pandoc` does not support internal reference to figures or equations and
 However the `pandoc-crossref`^[<https://github.com/lierdakil/pandoc-crossref>] filter adds support for this (and has been used in the preparation of this document).
 `pandoc-crossref` uses the same syntax as `pandoc-citeproc`, so adds little cognitive overhead in inter-document referencing.
 However in order avoid `pandoc-citeproc` processing internal references, `pandoc-crossref` must be invoked first.
+
+## \TeX\ Clean up
+
+A small amount of clean \TeX\ source cleanup may be necessary after running the Markdown through `pandoc`.
+The YAML header elements are incorporated into the manuscript using `for` loops, which may leave trailing punctuation in lists (e.g., a trailing em dash following the list of keywords).
+These will show up in the final output source unless they are removed at the intermediate stage.
 
 # Summary
 
