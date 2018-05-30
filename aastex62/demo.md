@@ -73,15 +73,17 @@ This set of templates specifically utilizes the `pandoc` Markdown flavor^[<https
 
 ## Pandoc {#sec:pandoc}
 
-`pandoc` is "a universal document converter"^[<https://pandoc.org>], originally written by John MacFarlane^[<http://johnmacfarlane.net/>].
-At present it supports 25 input formats and 47 output formats (including variations of several standards such as Markdown).
+`pandoc`^[<https://pandoc.org>] is "a universal document converter", originally written by John MacFarlane.
+It currently supports 25 input formats and 47 output formats (including variations of standards).
 Additional formats can be supported by providing user-defined writers, written in the lua language.
 `pandoc` is written in the Haskell programming language and supports extensions written as filters.
-This template
+During the document conversion `pandoc` can use additional metadata specific in a YAML ("YAML Ain't Markup Languge) header.
+This header can either be prepended to the Markdown text or incorporated from a separate file.
 
-Note that the author can write \TeX\ into the Markdown file and `pandoc` will happily pass it through to the finished product.
+In order to convert Markdown source into a \TeX\ file which is compatible with journal submission requirements I have created a set of templates which instruct `pandoc` in how to generate the output.
+Note that the author can write \TeX\ directly into the Markdown file and `pandoc` will happily pass it through to the finished product.
 However, this may compromise alternate (non-\TeX) output formats.
-For example, the \aastex `deluxetable` environment can be used, but will not properly render in non-\TeX\ formats.
+For example, the \aastex\ `deluxetable` environment can be used, but will not properly render in non-\TeX\ formats.
 Pandoc filers^[<https://pandoc.org/filters.html>] may be crafted to convert simple `pandoc` tables into `deluxetable`s on the fly, if desired.
 
 ## Paper Organization
@@ -102,7 +104,7 @@ I remind the reader that this approach can be extended to the templates of other
 
 ## Manuscript Metadata and Styles {#sec:style}
 
-The Markdown file can be prefixed with a header in the YAML ("YAML Ain't Markup Language") format.
+The Markdown file can be prefixed with a header in the YAML format.
 Article data such as the title, relevant dates, author list, keywords, etc. is specified here.
 This header information is extracted via a \TeX\ template file and passed through to the desired output file.
 The `pandoc` template also derives the \aastex\ style information from this YAML header, via the `aastexopts` entry.
@@ -148,6 +150,24 @@ Unwanted entries can be commented out with a `#` or safely deleted (here they ha
 If a different style (e.g., `twocolumn`) is desired, this can be changed in `aastexopts`.
 YAML header entries and corresponding \TeX\ template code have been created to correspond to most (if not all) of the \aastex\ metadata options.
 
+As a short example, this code in the `aastex62_template.tex` file processes any Received/Revised/Accepted YAML entries and inserts them into the resulting \LaTeX\ output:
+
+```
+$if(received)$
+\received{$received$}
+$endif$
+
+$if(revised)$
+\revised{$revised$}
+$endif$
+
+$if(accepted)$
+\accepted{$accepted$}
+$endif$
+```
+
+Similar code is used to process the author list, titles, etc.
+
 ## Images {#sec:images}
 
 Images can be included, captioned, and labeled.
@@ -163,7 +183,7 @@ the colored points. From @Privon2017b.](images/dm1647.png){#fig:dm1647 width=3in
 ## Tables {#sec:tables}
 
 This tool will pass \LaTeX\ tables through `pandoc` to the chosen \LaTeX\ parser.
-Thus, any tables which are part of \aastex will work for producing pdfs.
+Thus, any tables which are part of \aastex\ will work for producing pdfs.
 However, those will not propagate through to other output formats with which `pandoc` is compatible.
 
 [Table @tbl:storms] is an example of a "simple table"^[<https://pandoc.org/MANUAL.html#tables>]:
