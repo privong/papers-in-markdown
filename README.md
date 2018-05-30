@@ -30,16 +30,17 @@ It's certainly possible, but it would add another level of `if/elseif/else` to t
 These templates require:
 
 - [pandoc](https://pandoc.org)
-- A (La)TeX typesetting engine (If you want to actually make a PDF instead of just stopping at TeX source)
+- A (La)TeX typesetting engine (If you want to make a PDF instead of just stopping at TeX source)
 
-Technically optional (but I have never seen a paper without citations and in-text references) you will also want:
+Technically optional, but since I have never seen a paper without citations and in-text references, you will also probably want:
 
 - [pandoc-citeproc](https://github.com/jgm/pandoc-citeproc)
 - [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
 
 ## Ancillary Files
 
-In order to create a PDF from your Markdown source (or to turn the demos included here) you will need the appropriate style file for the journal.
+In order to create a PDF from your Markdown source (or the demos included here) you will need the appropriate style file for the journal.
+These are not needed to create TeX or other output formats.
 
 # Licensing
 
