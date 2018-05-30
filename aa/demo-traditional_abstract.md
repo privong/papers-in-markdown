@@ -1,5 +1,6 @@
 ---
 preambleinput: ["macros.tex"]
+link-citations: true
 texpackages:
 - name: xspace
 #  opts:
@@ -35,3 +36,5 @@ G.C.P. acknowledges support from the University of Florida.
 This work makes us of the `pandoc` universal document convertor^[<https://pandoc.org/>].
 
 {{end_acknowledgments}}
+
+# References

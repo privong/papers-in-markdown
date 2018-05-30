@@ -1,6 +1,7 @@
 ---
 aastexopts: [singlecolumn]
 preambleinput: ["macros.tex"]
+link-citations: true
 texpackages:
 - name: xspace
 #  opts:
@@ -313,3 +314,5 @@ Comments, bug reports, and enhancements are welcome.
 {{acknowledgments}}
 
 I thank Kelly Hondula for comments on this manuscript and acknowledge support from the University of Florida.
+
+# References
