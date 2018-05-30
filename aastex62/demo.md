@@ -296,7 +296,13 @@ I have provided a brief demonstration for a method of writing research articles 
 The accompanying template and source code release also includes templates for MNRAS and A&A.
 The advantage of this approach is improved readability of the source files and added flexibility in output formats.
 The latter makes it easier for authors to share HTML and/or EPUB versions of manuscripts, potentially improving uptake.
+
+I emphasize that this pandoc approach does not supplant the journal-provided \LaTeX\ templates, but instead complements it by providing easier access to additional output formats.
+This approach is also flexible and does not lock the author into a single format.
+If at any point an author feels unable to progress in Markdown alone, \TeX\ can be embedded directly into the Markdown or `pandoc` can be used to convert the Markdown to a \TeX\ file and the author can resume writing as if they had been writing in \TeX all along.
+
 I have made the templates and demonstration text publicly available for use and enhancement by the community: <https://github.com/privong/papers-in-markdown>.
+Comments, bug reports, and enhancements are welcome.
 
 {{acknowledgments}}
 
