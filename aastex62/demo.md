@@ -30,10 +30,10 @@ facility: []
 abstract: |
   Markdown is a markup format that can be used to create articles with readable source while making it easy to translate to other formats (e.g., \TeX\, HTML, docx, and PDF [via \TeX]).
   In this article I announce and briefly describes templates and code which use the `pandoc` software to convert Markdown into journal-compatible \TeX.
-  The advantage of this approach is ease of readability of the source files and flexibility in output formats (e.g., for later output to HTML).
+  The advantage of this approach is ease of readability of the source files and flexibility in output formats (e.g., for later output to HTML or EPUB).
   This article describes and demonstrates this technique for \aastex\ output, however the source repository also includes barebones examples for MNRAS and A\&A.
   I am releasing the code and templates under free software / open culture licenses.
-  Applying this to additional journals or output formats requires the creation of new template files and/or modifications of the YAML header for the Markdown source.
+  This approach can be applied to additional journals or output formats with the creation of new template files and/or modifications of the YAML header in the Markdown source.
 ---
 
 # Introduction {#sec:intro}
