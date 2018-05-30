@@ -43,7 +43,7 @@ Currently papers are predominantly prepared in \LaTeX\ or WYSIWYG^["What you see
 While powerful in their own ways, each of these have their own drawbacks.
 \LaTeX\ often suffers from a steep learning curve and cryptic error messages.
 On the other hand, WYSIWYG editors have historically had sub-par mathematics rendering ability and suffered from difficulties with robust internal referencing.
-A secondary consideration is that output to other formats (e.g., HTML) can be tedious and/or require a significant investment in tooling.
+A secondary consideration is that output to other formats (e.g., HTML, EPUB) can be tedious and/or require a significant investment in tooling.
 This latter effect potentially harms dissemination of scientific results.
 
 Here I describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([Section @sec:markdown]) and using `pandoc` ([Section @sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX\ or `.docx`).
@@ -77,14 +77,14 @@ This set of templates specifically utilizes the `pandoc` Markdown flavor^[<https
 It currently supports 25 input formats and 47 output formats (including variations of standards).
 Additional formats can be supported by providing user-defined writers, written in the lua language.
 `pandoc` is written in the Haskell programming language and supports extensions written as filters.
-During the document conversion `pandoc` can use additional metadata specific in a YAML ("YAML Ain't Markup Languge) header.
+During the document conversion `pandoc` can use additional metadata specific in a YAML ("YAML Ain't Markup Languge") header.
 This header can either be prepended to the Markdown text or incorporated from a separate file.
 
 In order to convert Markdown source into a \TeX\ file which is compatible with journal submission requirements I have created a set of templates which instruct `pandoc` in how to generate the output.
 Note that the author can write \TeX\ directly into the Markdown file and `pandoc` will happily pass it through to the finished product.
 However, this may compromise alternate (non-\TeX) output formats.
-For example, the \aastex\ `deluxetable` environment can be used, but will not properly render in non-\TeX\ formats.
-Pandoc filers^[<https://pandoc.org/filters.html>] may be crafted to convert simple `pandoc` tables into `deluxetable`s on the fly, if desired.
+For example, the \aastex\ `deluxetable` environment can be used, but it will not be rendered as a table in non-\TeX\ formats and will instead be displayed as the raw \TeX\ source (or worse).
+Pandoc filers^[<https://pandoc.org/filters.html>] can be crafted to convert simple `pandoc` tables into `deluxetable`s on the fly, if desired.
 
 ## Paper Organization
 
@@ -186,7 +186,7 @@ This tool will pass \LaTeX\ tables through `pandoc` to the chosen \LaTeX\ parser
 Thus, any tables which are part of \aastex\ will work for producing pdfs.
 However, those will not propagate through to other output formats with which `pandoc` is compatible.
 
-[Table @tbl:storms] is an example of a "simple table"^[<https://pandoc.org/MANUAL.html#tables>]:
+[Table @tbl:storms] is an example of a `pandoc` Markdown "simple table".
 
 Date        Day              Number of storms
 ----------  --------------  -----------------
@@ -243,14 +243,18 @@ For example the \TeX\ for this document was generated with:
 ## Document Filters
 
 `pandoc` supports user-written filters.
-We have already seen two filters, `pandoc-citeproc` and `pandoc-crossref`.
 These filters enable customized processing of documents during conversion.
 Commonly used languages for this include Haskell, lua, and python^[Using either the `panflute` or `pandocfilters` modules.].
 Note that a lua parser is included with `pandoc` versions 2.0 and newer, and the use of lua filters is faster than other options.
 
-With output formats besides \aastex\ in mind, the acknowledgments portion of the document has been delineated in the Markdown file as a macros: `{{acknowledgments}}`.
-However, is desirable to automatically convert this to an `\acknowledgments` macro when creating a \TeX\ file.
-As a filter demonstration, the following lua code performs this translation:
+We have already seen two filters, `pandoc-citeproc` and `pandoc-crossref`.
+These filters are somewhat complex, owing to their significant functionality.
+
+Simple filters are straightforward to construct and we demonstrate one here.
+With output formats besides \aastex\ in mind, the acknowledgments portion of the document has been delineated in the Markdown file as a macro: `{{acknowledgments}}`.
+However we want to automatically convert this to the \TeX\ source appropriate for the jounral's template.
+For \aastex\, this is the `\acknowledgments` macro.
+The following filter, written in lua, performs this translation when included as part of the `pandoc` invocation:
 
 ```{#ackfilter .numberLines caption="lua filter code for acknowledgements replacement"}
 return {
@@ -268,12 +272,12 @@ return {
 }
 ```
 
-This filter is included as `aastex62/filters/acknowledgments.lua` in the template distribution.
-It can be used with the `--lua-filter=` command-line argument.
+A variant of this filter is included as `aastex62/filters/acknowledgments.lua` in the template distribution and similar filters are included for the MNRAS and A&A templates.
+It can is included by adding the `--lua-filter=` command-line argument to `pandoc`.
 This filer be easily extended to other output formats, including HTML.
 
 Generally, creation of filters would be more broadly useful in automating the conversion of Markdown files into journal-compatible \TeX.
-A opportunity for this is to write a filter that takes the Markdown "simple table" format and converts it into an \aastex\ `deluxetable`.
+An opportunity for this is to write a filter that takes the Markdown "simple table" format and converts it into an \aastex\ `deluxetable`.
 
 # Summary
 
