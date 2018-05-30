@@ -7,6 +7,9 @@ texpackages:
 #  opts:
 - name: amsmath
 #  opts:
+- name: booktabs
+- name: listings
+- name: framed
 bibstyle: aasjournal
 bibliography: demo.bib
 received: "\\today"
