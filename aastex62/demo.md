@@ -7,7 +7,9 @@ texpackages:
 #  opts:
 - name: amsmath
 #  opts:
+# for tables include:
 - name: booktabs
+# for source code listings include "listings" and "framed"
 - name: listings
 - name: framed
 bibstyle: aasjournal
