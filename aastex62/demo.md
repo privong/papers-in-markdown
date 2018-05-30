@@ -200,20 +200,38 @@ Date        Day              Number of storms
 
 Table: Number of imaginary thunderstorms in Gainesville, FL during the 21st week of 2018. {#tbl:storms}
 
+This table was created with:
+
+```
+Date        Day              Number of storms
+----------  --------------  -----------------
+2018-05-21  Monday                        ...
+2018-05-22  Tuesday                         2
+2018-05-23  Wednesday                       1
+2018-05-24  Thursday                        3
+2018-05-25  Friday                          0
+2018-05-26  Saturday                        0
+2018-05-27  Sunday                          0
+
+Table: Number of imaginary thunderstorms in Gainesville, FL during the 21st week of 2018. {#tbl:storms}
+```
+
 ## Citations {#sec:citations}
 
-Citations can be incorporated using the pandoc-citeproc filter^[<https://pandoc.org/MANUAL.html#citations>].
-These citations take the form of: `[@Astropy2018]` to correspond to [@Astropy2018].
+Citations can be incorporated using the `pandoc-citeproc` filter.
+These citations take the form of: `[@Astropy2018]`, corresponding to [@Astropy2018] and `@Astropy2018` to cite in the format of: @Astropy2018.
 `pandoc-citeproc` uses the Citation Style Language^[<https://citationstyles.org/>] to format citations.
+Presently most of the main astrophysics journals lack entries in the CSL database.
 
 ## Equations {#sec:equations}
 
-Equations can be specified and labeled in the text. `$$e^{i\pi} + 1 = 0$$ {#eq:euler}` results in this output:
+Equations can be specified and labeled in the text using standard \TeX\ macros.
+For example, writing `$$e^{i\pi} + 1 = 0$$ {#eq:euler}` results in this output:
 
 $$e^{i\pi} + 1 = 0$$ {#eq:euler}
 
-And [equation @eq:euler] can subsequently be referenced.
-This method of specifying math and equations can be coupled with `pandoc`'s support for a variety of methods to render math in HTML^[<https://pandoc.org/MANUAL.html#math-rendering-in-html>].
+And [Equation @eq:euler] can subsequently be referenced in the text with `[Equation @eq:euler]`.
+This method of specifying math and equations can be coupled with `pandoc`'s support for a variety of methods to render math in many other output formats including HTML^[<https://pandoc.org/MANUAL.html#math-rendering-in-html>].
 
 
 # Notes on Preparation for Submission {#sec:notes}
@@ -228,17 +246,6 @@ The templates are different because each journal has different options and handl
 For example collaboration information can be provded to AAS Journals, but not to MNRAS or A&A.
 Hence it makes some sense to keep the Markdown templates separate for these journals.
 However, if a manuscript is prepared using the Markdown template for A&A but the authors later decide to submit to MNRAS, the only major changes needed will be to the YAML header in the Markdown file.
-So this method of manuscript preparation may be somewhat more flexible than directly writing the document in \TeX.
-
-## Internal References
-
-Naively `pandoc` does not presently support internal reference to figures or equations and does not support numbered section references.
-However the `pandoc-crossref`^[<https://github.com/lierdakil/pandoc-crossref>] filter adds support for this (and has been used in the preparation of this document).
-Note that `pandoc-crossref` uses the same syntax as `pandoc-citeproc`, the former filter must be invoked before the latter.
-For example the \TeX\ for this document was generated with:
-
-    pandoc demo.md -s --template aastex62_template.tex -o demo.tex \
-                   -F pandoc-crossref -F pandoc-citeproc
 
 ## Document Filters
 
@@ -247,12 +254,9 @@ These filters enable customized processing of documents during conversion.
 Commonly used languages for this include Haskell, lua, and python^[Using either the `panflute` or `pandocfilters` modules.].
 Note that a lua parser is included with `pandoc` versions 2.0 and newer, and the use of lua filters is faster than other options.
 
-We have already seen two filters, `pandoc-citeproc` and `pandoc-crossref`.
-These filters are somewhat complex, owing to their significant functionality.
-
-Simple filters are straightforward to construct and we demonstrate one here.
+Simple filters are straightforward to construct and I demonstrate one here.
 With output formats besides \aastex\ in mind, the acknowledgments portion of the document has been delineated in the Markdown file as a macro: `{{acknowledgments}}`.
-However we want to automatically convert this to the \TeX\ source appropriate for the jounral's template.
+However it is desirable to automatically convert this to the \TeX\ source appropriate for the jounral's template.
 For \aastex\, this is the `\acknowledgments` macro.
 The following filter, written in lua, performs this translation when included as part of the `pandoc` invocation:
 
@@ -278,6 +282,13 @@ This filer be easily extended to other output formats, including HTML.
 
 Generally, creation of filters would be more broadly useful in automating the conversion of Markdown files into journal-compatible \TeX.
 An opportunity for this is to write a filter that takes the Markdown "simple table" format and converts it into an \aastex\ `deluxetable`.
+
+## Internal References
+
+Naively `pandoc` does not support internal reference to figures or equations and does not support numbered section references.
+However the `pandoc-crossref`^[<https://github.com/lierdakil/pandoc-crossref>] filter adds support for this (and has been used in the preparation of this document).
+`pandoc-crossref` uses the same syntax as `pandoc-citeproc`, so adds little cognitive overhead in inter-document referencing.
+However in order avoid `pandoc-citeproc` processing internal references, `pandoc-crossref` must be invoked first.
 
 # Summary
 
