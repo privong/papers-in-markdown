@@ -3,7 +3,7 @@
 Generate a TeX file with:
 
 ```
-pandoc demo.md -s --template aastex62_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --no-highlight
+pandoc demo.md -s --template aastex62_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --no-highlight --natbib
 ```
 
 Go straight to the pdf with:

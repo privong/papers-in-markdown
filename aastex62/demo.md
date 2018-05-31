@@ -224,6 +224,9 @@ These citations take the form of: `[@Astropy2018]`, corresponding to [@Astropy20
 `pandoc-citeproc` uses the Citation Style Language^[<https://citationstyles.org/>] to format citations.
 Presently most of the main astrophysics journals lack entries in the CSL database.
 
+By default, `pandoc-citeproc` will convert the references into text when generating \TeX files.
+In order to convert the citations to `\cite{}` style commands (which are likely preferred for journal submissions) call `pandoc` with the `--natbib` or option.
+
 ## Equations {#sec:equations}
 
 Equations can be specified and labeled in the text using standard \TeX\ macros.

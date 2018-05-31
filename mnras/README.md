@@ -3,7 +3,7 @@
 Generate a `tex` file with:
 
 ```
-pandoc demo.md -s --template mnras_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua
+pandoc demo.md -s --template mnras_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --natbib
 ```
 
 Go straight to the pdf with:
