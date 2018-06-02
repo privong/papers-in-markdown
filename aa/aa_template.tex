@@ -91,4 +91,10 @@ $endif$
 
 $body$
 
+$if(bibliography)$
+$for(bibliography)$
+\bibliography{$bibliography$}
+$endfor$
+$endif$
+
 \end{document}

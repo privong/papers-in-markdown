@@ -107,4 +107,10 @@ $endfor$
 }
 $endif$
 
+$if(bibliography)$
+$for(bibliography)$
+\bibliography{$bibliography$}
+$endfor$
+$endif$
+
 \end{document}
