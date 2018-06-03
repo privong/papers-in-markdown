@@ -6,7 +6,7 @@ Generate a TeX file with:
 pandoc demo.md -s --template aastex62_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --no-highlight --natbib
 ```
 
-Go straight to the pdf with:
+Go straight to the PDF with:
 
 ```
 pandoc demo.md -s --template aastex62_template.tex -o demo.pdf -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --pdf-engine=xelatex --no-highlight
@@ -19,6 +19,19 @@ The [`demo.md`](demo.md) file contains a sample article describing the use of th
 * If you want to include macros in anything contained within the YAML header, those must be put in a separate macro file that is incorporated via `\include{}` or `\input{}` *above* the title. This is demonstrated in [demo.md](demo.md).
 
 * To get references formatted for the AAS Journals, first convert the Markdown to TeX (as demonstrated above) with the `--natbib` switch. The resulting TeX file can then be processed with `pdflatex` and `bibtex` as usual. The template is constructed in such a way that this will result in correctly formatted references (using the `aasjournal.bst` file).
+
+### Useful pandoc Options
+
+I recommend reading the [pandoc manual](https://pandoc.org/MANUAL.html), but below are a few switches I have found useful for the aims of this repo.
+Please consult the pandoc manual for more detailed information.
+
+* `-F/--filter`, `--lua-filter`: invoke a filter to operate on the document during conversion.
+
+* `-s`: create a "standalone" document
+
+* `--listings` or `--no-highlight`: Both apply if there are code listings. The former creates TeX float listings while the latter does not apply special formatting.
+
+* `--natbib`: Convert pandoc references to `\cite{}` calls the output.
 
 ### Collaborations
 
