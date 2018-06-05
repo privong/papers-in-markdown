@@ -31,7 +31,7 @@ Please consult the pandoc manual for more detailed information.
 
 * `--listings` or `--no-highlight`: Both apply if there are code listings. The former creates TeX float listings while the latter does not apply special formatting.
 
-* `--natbib`: Convert pandoc references to `\cite{}` calls the output.
+* `--natbib`: Convert pandoc references to `\cite{}` calls in the output.
 
 ### Collaborations
 
