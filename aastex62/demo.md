@@ -311,9 +311,9 @@ The latter makes it easier for authors to share HTML and/or EPUB versions of man
 
 I emphasize that this pandoc approach does not supplant the journal-provided \LaTeX\ templates, but instead complements it by providing easier access to additional output formats.
 This approach is also flexible and does not lock the author into a single format.
-If at any point an author feels unable to progress in Markdown alone, \TeX\ can be embedded directly into the Markdown or `pandoc` can be used to convert the Markdown to a \TeX\ file and the author can resume writing as if they had been writing in \TeX all along.
+If at any point an author feels unable to progress in Markdown alone, \TeX\ can be embedded directly into the Markdown or `pandoc` can be used to convert the Markdown to a \TeX\ file and the author can resume writing as if they had been writing in \TeX\ all along.
 
-I have made the templates and demonstration text publicly available for use and enhancement by the community: <https://github.com/privong/papers-in-markdown>.
+I have made the templates and demonstration text publicly available for use and modification by the community: <https://github.com/privong/papers-in-markdown>.
 Comments, bug reports, and enhancements are welcome.
 
 {{acknowledgments}}
