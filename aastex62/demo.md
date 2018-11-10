@@ -49,6 +49,8 @@ This latter effect potentially harms dissemination of scientific results.
 
 Here I describe and demonstrate a method of preparing manuscripts by writing them in Markdown ([Section @sec:markdown]) and using `pandoc` ([Section @sec:pandoc]) to convert the Markdown file into a format suitable for submission to journals (e.g., \TeX\ or `.docx`).
 This approach simplifies the writing process while retaining the power of \LaTeX's formulae and making internal references easy.
+In [Section @sec:prep] I summarize the specification of title information as well as inclusion of images, tables and equations.
+In [Section @sec:notes] I describe the practical aspects of preparing papers in Markdown, including the use of templates, document filters, and internal document referencing.
 
 ## Markdown {#sec:markdown}
 
@@ -56,19 +58,20 @@ Markdown is a markup format that was originally intended to specify a plain text
 
 > A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. – John Gruber
 
-The Markdown specification was released by John Gruber in 2004^[<https://daringfireball.net/projects/markdown/>] and since its release, Markdown (and variants) has become widely used.
+The Markdown specification was released by John Gruber in 2004^[<https://daringfireball.net/projects/markdown/>].
+Since then Markdown and its variants have become widely used.
 It aspires to "get out of the way and let people write" by utilizing minimally intrusive text formatting notation.
-While describing Markdown is beyond this scope of this document [Table @tbl:mu_emphasis] provides a demonstration of how one might emphasize text in a few different markup formats.
+While describing Markdown is beyond this scope of this document, [Table @tbl:mu_emphasis] shows a brief comparison of how one might specify emphasized text in a few different markup formats.
 
-Markup      Notation
------------ -------------------------
-\LaTeX      `\emph{emphasize this}`
-HTML        `<em>emphasize this</em>`
-Markdown    `_emphasize this_`
+Markup Language     Notation
+----------------    -------------------------
+\LaTeX              `\emph{emphasize this}`
+HTML                `<em>emphasize this</em>`
+Markdown            `_emphasize this_`
 
 Table: Emphasizing text in several markup specifications. {#tbl:mu_emphasis}
 
-In comparison to \TeX\ and HTML, Markdown's emphasis method is less visually intrusive, making it easier to read the source.
+In this example, Markdown's emphasis method is less visually intrusive than that of \TeX\ or HTML, making it easier to read the text of the source document.
 For the remainder of the document I assume the reader is familiar with syntax of Markdown.
 This set of templates specifically utilizes the `pandoc` Markdown flavor^[<https://pandoc.org/MANUAL.html#pandocs-markdown>] which has some differences and extensions compared to Gruber's original specification.
 
@@ -92,14 +95,13 @@ Pandoc filters^[<https://pandoc.org/filters.html>] can be crafted to convert sim
 I broadly divide this article into demonstrations of how to prepare a manuscript in Markdown such that it generates nearly submittable \TeX\ ([Section @sec:prep]).
 This includes how to specify the article style via the YAML header of the Markdown file ([Section @sec:style]).
 I then demonstrate how to include images ([Section @sec:images]), tables ([Section @sec:tables]), and citations ([Section @sec:citations]).
-I conclude by discussing some practical considerations for this paper writing process ([Section @sec:notes]).
-
+I conclude by discussing some practical considerations for writing journal articles in Markdown ([Section @sec:notes]).
 Throughout I assume the reader is familiar with Markdown and do not discuss Markdown's text formatting.
 Instead I discuss the general behavior of the template file and actions which are necessary for generating \aastex-compatible output.
 
 The Markdown file, `pandoc` invocation, and associated filters used to create the \TeX\ for this document are available at: <https://github.com/privong/papers-in-markdown>.
-I remind the reader that this approach can be extended to the templates of other journals by modifying the YAML header in the Markdown file and the \TeX\ template file.
-
+This approach can be extended to the templates of other journals by modifying the YAML header in the Markdown file and the \TeX\ template file.
+Bare-bones examples for MNRAS and A\&A are provided in the same github repository.
 
 # Manuscript Preparation in Markdown {#sec:prep}
 
@@ -172,7 +174,7 @@ Similar code is used to process the author list, titles, etc.
 ## Images {#sec:images}
 
 Images can be included, captioned, and labeled.
-A demonstration is [Figure @fig:dm1647], which was included as:
+A demonstration is [Figure @fig:dm1647], which was included via the Markdown:
 
 ```
 ![A r-band image of dm1647+21 in grayscale with a lookalike N-body simulation overlaid as \
@@ -184,8 +186,8 @@ the colored points. From @Privon2017b.](images/dm1647.png){#fig:dm1647 width=3in
 ## Tables {#sec:tables}
 
 This tool will pass \LaTeX\ tables through `pandoc` to the chosen \LaTeX\ parser.
-Thus, any tables which are part of \aastex\ will work for producing PDFs.
-However, those will not propagate through to other output formats with which `pandoc` is compatible.
+Thus, any tables which are part of \aastex\ (e.g., `deluxetable`) will work for producing PDFs.
+However, such \TeX\ tables will not be appropriately rendered in other output formats with which `pandoc` is compatible.
 
 [Table @tbl:storms] is an example of a `pandoc` Markdown "simple table".
 
@@ -220,25 +222,26 @@ Table: Number of imaginary thunderstorms in Gainesville, FL during the 21st week
 ## Citations {#sec:citations}
 
 Citations can be incorporated using the `pandoc-citeproc` filter.
-These citations take the form of: `[@Astropy2018]`, corresponding to [@Astropy2018] and `@Astropy2018` to cite in the format of: @Astropy2018.
-`pandoc-citeproc` uses the Citation Style Language^[<https://citationstyles.org/>] to format citations.
+These citations take the form of: `[@Astropy2018]`, which corresponds to to: [@Astropy2018] or `@Astropy2018` to cite in the format of: @Astropy2018.
+By default, `pandoc-citeproc` will convert the references into text when generating \TeX\ or PDF files, in a format specified by the user via a Citation Style Language^[<https://citationstyles.org/>] definition.
 Presently most of the main astrophysics journals lack entries in the CSL database.
+In order to create journal-compatible submission files the Markdown file must be explicitly converted to \TeX\ prior to compilation to PDF.
 
-By default, `pandoc-citeproc` will convert the references into text when generating \TeX\ or PDF files.
-In order to convert the citations to `\cite{}` style commands (which are likely preferred for journal submissions) call `pandoc` with the `--natbib` or option.
-The resulting \TeX\ file can then be processed with `latex` and `bibtex` in order to obtain references which are formatted to the journal's specifications.
-The journal's `.bst` file can be specified in the YAML header and this information is propagated through to the \TeX.
+To convert the citations to `\cite{}` style commands (which are likely preferred for journal submissions) call `pandoc` with the `--natbib` or option.
+The resulting \TeX\ file can then be processed with `latex`^[or your favorite \TeX\ engine.] and `bibtex` in order to obtain references which are formatted to the journal's specifications.
+The journal's `.bst` file can be specified in the YAML header and this information is propagated through to the \TeX\ source.
+A sample workflow for this is provided in the `aastex62/README.md` file in the github repository.
 
 ## Equations {#sec:equations}
 
-Equations can be specified and labeled in the text using standard \TeX\ macros.
-For example, writing `$$e^{i\pi} + 1 = 0$$ {#eq:euler}` results in this output:
+Equations can be specified in the text using standard \TeX\ macros.
+For example, entering: `$$e^{i\pi} + 1 = 0$$ {#eq:euler}` results in this output:
 
 $$e^{i\pi} + 1 = 0$$ {#eq:euler}
 
-And [Equation @eq:euler] can subsequently be referenced in the text with `[Equation @eq:euler]`.
 This method of specifying math and equations can be coupled with `pandoc`'s support for a variety of methods to render math in many other output formats including HTML^[<https://pandoc.org/MANUAL.html#math-rendering-in-html>].
-
+The bracketed expression at the end creates an in-text reference, similar to the `\\label{}` command in \LaTeX.
+With such a label, [Equation @eq:euler] can also subsequently be referenced in the text by writing `[Equation @eq:euler]`.
 
 # Notes on Preparation for Submission {#sec:notes}
 
@@ -284,7 +287,7 @@ return {
 
 A variant of this filter is included as `aastex62/filters/acknowledgments.lua` in the template distribution and similar filters are included for the MNRAS and A&A templates.
 It can is included by adding the `--lua-filter=` command-line argument to `pandoc`.
-This filer be easily extended to other output formats, including HTML.
+This filer be easily extended to generate acknowledgement sections for other output formats, including HTML.
 
 Generally, creation of filters would be more broadly useful in automating the conversion of Markdown files into journal-compatible \TeX.
 An opportunity for this is to write a filter that takes the Markdown "simple table" format and converts it into an \aastex\ `deluxetable`.
