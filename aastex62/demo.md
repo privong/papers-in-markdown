@@ -89,7 +89,7 @@ Pandoc filters^[<https://pandoc.org/filters.html>] can be crafted to convert sim
 
 ## Paper Organization
 
-I broadly divide this article into demonstrations of how to prepare a manuscript in Markdown such that it generates nearly-submittable \TeX\ ([Section @sec:prep]).
+I broadly divide this article into demonstrations of how to prepare a manuscript in Markdown such that it generates nearly submittable \TeX\ ([Section @sec:prep]).
 This includes how to specify the article style via the YAML header of the Markdown file ([Section @sec:style]).
 I then demonstrate how to include images ([Section @sec:images]), tables ([Section @sec:tables]), and citations ([Section @sec:citations]).
 I conclude by discussing some practical considerations for this paper writing process ([Section @sec:notes]).
@@ -245,7 +245,7 @@ This method of specifying math and equations can be coupled with `pandoc`'s supp
 ## Available Templates
 
 I have created templates and demonstration files for the AAS Journals, Monthly Notices of the Royal Astronomical Society, and Astronomy & Astrophysics.
-The AAS Journals example (which you are reading now) is the most complete, while the others are bare-bones and intended to constitute a minimal starting point.
+The AAS Journals example (which you are reading now) is the most detailed, while the others are bare-bones and intended to constitute a minimal starting point.
 However, the Markdown used to generate this article should work in the demonstration files for the other journals.
 
 The templates are different because each journal has different options and handling of author lists, abstracts, and metadata.
