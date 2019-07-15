@@ -102,7 +102,7 @@ Throughout I assume the reader is familiar with Markdown and do not discuss Mark
 Instead I discuss the general behavior of the template file and actions which are necessary for generating \aastex-compatible output.
 
 The Markdown file, `pandoc` invocation, and associated filters used to create the \TeX\ for this document are available at: <https://github.com/privong/papers-in-markdown>.
-The text of this document is in the `aastex62/demo.md` file.
+The text of this document is in the `aastex63/demo.md` file.
 This approach can be extended to the templates of other journals by modifying the YAML header in the Markdown file and the \TeX\ template file.
 Bare-bones examples for MNRAS and A\&A are provided in the same github repository.
 
@@ -160,7 +160,7 @@ If a different style (e.g., `twocolumn`) is desired, this can be changed in `aas
 YAML header entries and corresponding \TeX\ template code have been created to correspond to most (if not all) of the \aastex\ metadata options.
 
 Entries in this YAML header are made available to the `pandoc` processing steps and conditional statements in the applied document template(s).
-As a short example, this code in the `aastex62/aastex62_template.tex` file processes the r`eceived`/`revised`/`accepted` YAML entries and inserts them into the resulting \LaTeX\ output:
+As a short example, this code in the `aastex63/aastex63_template.tex` file processes the r`eceived`/`revised`/`accepted` YAML entries and inserts them into the resulting \LaTeX\ output:
 
 ```
 $if(received)$
@@ -239,7 +239,7 @@ In order to create journal-compatible submission files the Markdown file must be
 To convert the citations to `\cite{}` style commands (which are likely preferred for journal submissions) call `pandoc` with the `--natbib` or option.
 The resulting \TeX\ file can then be processed with `latex`^[or your favorite \TeX\ engine.] and `bibtex` in order to obtain references which are formatted to the journal's specifications.
 The journal's `.bst` file can be specified in the YAML header and this information is propagated through to the \TeX\ source.
-A sample workflow for this is provided in the `aastex62/README.md` file in the github repository.
+A sample workflow for this is provided in the `aastex63/README.md` file in the github repository.
 
 ## Equations {#sec:equations}
 
@@ -299,7 +299,7 @@ return {
 ```
 
 This filter can be expanded to handle other output formats by adding additional `elseif` clauses for other `FORMAT` types.
-A variant of this filter with an additional handling for HTML documents is included as `aastex62/filters/acknowledgments.lua` in the template distribution.
+A variant of this filter with an additional handling for HTML documents is included as `aastex63/filters/acknowledgments.lua` in the template distribution.
 Similar filters are included for the MNRAS and A&A templates, whose style files handle acknowledgements in a different way.
 These filters are included in the processing chain by adding the `--lua-filter=` command-line argument to `pandoc`.
 Commonly used languages for writing `pandoc` filters include Haskell, lua, and python^[Using either the `panflute` or `pandocfilters` modules.].

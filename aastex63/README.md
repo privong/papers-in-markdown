@@ -3,13 +3,13 @@
 Generate a TeX file with:
 
 ```
-pandoc demo.md -s --template aastex62_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --no-highlight --natbib
+pandoc demo.md -s --template aastex63_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --no-highlight --natbib
 ```
 
 Go straight to the PDF with:
 
 ```
-pandoc demo.md -s --template aastex62_template.tex -o demo.pdf -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --pdf-engine=xelatex --no-highlight
+pandoc demo.md -s --template aastex63_template.tex -o demo.pdf -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --pdf-engine=xelatex --no-highlight
 ```
 
 The [`demo.md`](demo.md) file contains a sample article describing the use of this template in generating AASTeX output via pandoc.
@@ -41,11 +41,11 @@ Please consult the pandoc manual for more detailed information.
 
 In addition to TeX and PDF pandoc can output to a [variety of formats](https://pandoc.org/MANUAL.html#general-options) and pandoc ships with default templates for each.
 However, in order to take full advantage of the additional information contained in the YAML header, a custom template should be written.
-A bare-bones example HTML template is provided in the [`aastex62_website_template.html`](aastex62_website_template.html) file.
+A bare-bones example HTML template is provided in the [`aastex63_website_template.html`](aastex63_website_template.html) file.
 This, along with `demo.md`, can be converted to a HTML page with:
 
 ```
-pandoc demo.md -s --template aastex62_website_template.html -o demo.html -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua
+pandoc demo.md -s --template aastex63_website_template.html -o demo.html -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua
 ```
 
 ## Known Issues
