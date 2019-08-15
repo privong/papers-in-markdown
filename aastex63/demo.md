@@ -279,7 +279,7 @@ Use of such a filter would make it easier to convert the Markdown source to othe
 Simple filters are straightforward to construct and I demonstrate one here.
 With output formats besides \aastex\ in mind, the acknowledgments portion of the document has been delineated in the Markdown file as a macro: `{{acknowledgments}}`.
 However it is desirable to automatically convert this to the \TeX\ source appropriate for the journal's template.
-For \aastex\, this is the `\acknowledgments` macro.
+For \aastex\, this is the `\acknowledgments{}` macro.
 The following filter, written in lua, performs this translation when included as part of the `pandoc` invocation:
 
 ```{#ackfilter .numberLines caption="lua filter code for acknowledgements replacement"}
@@ -337,5 +337,7 @@ Comments, bug reports, and enhancements are welcome.
 {{acknowledgments}}
 
 I thank Kelly Hondula for comments on this manuscript and acknowledge support from the University of Florida.
+
+{{end_acknowledgments}}
 
 # References

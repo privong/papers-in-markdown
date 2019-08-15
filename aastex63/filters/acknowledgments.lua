@@ -1,7 +1,7 @@
 --[[
 Simple pandoc filter to handle the {{acknowledgments}} macro.
 
-Copyright (C) 2018 George C. Privon
+Copyright (C) 2018-2019 George C. Privon
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -22,11 +22,15 @@ return {
     Str = function (elem)
         if elem.text == "{{acknowledgments}}" then
             if string.find(FORMAT, "latex") then
-                return pandoc.RawInline("tex", "\\acknowledgements")
+                return pandoc.RawInline("tex", "\\acknowledgments{")
             elseif string.find(FORMAT, "html") then
                 return pandoc.RawInline("html", "<h1>Acknowledgements</h1>")
             else
                 return elem
+            end
+        elseif elem.text == "{{end_acknowledgments}}" then
+            if string.find(FORMAT, "latex") then
+                return pandoc.RawInline("tex", "}")
             end
         end
     end,
