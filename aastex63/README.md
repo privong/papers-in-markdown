@@ -3,13 +3,13 @@
 Generate a TeX file with:
 
 ```
-pandoc demo.md -s --template aastex63_template.tex -o demo.tex -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --no-highlight --natbib
+pandoc demo.md -s --template aastex63_template.tex -o demo.tex -F pandoc-crossref --citeproc --lua-filter=filters/acknowledgments.lua --no-highlight --natbib
 ```
 
 Go straight to the PDF with:
 
 ```
-pandoc demo.md -s --template aastex63_template.tex -o demo.pdf -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua --pdf-engine=xelatex --no-highlight
+pandoc demo.md -s --template aastex63_template.tex -o demo.pdf -F pandoc-crossref --citeproc --lua-filter=filters/acknowledgments.lua --pdf-engine=xelatex --no-highlight
 ```
 
 The [`demo.md`](demo.md) file contains a sample article describing the use of this template in generating AASTeX output via pandoc.
@@ -45,10 +45,10 @@ A bare-bones example HTML template is provided in the [`aastex63_website_templat
 This, along with `demo.md`, can be converted to a HTML page with:
 
 ```
-pandoc demo.md -s --template aastex63_website_template.html -o demo.html -F pandoc-crossref -F pandoc-citeproc --lua-filter=filters/acknowledgments.lua
+pandoc demo.md -s --template aastex63_website_template.html -o demo.html -F pandoc-crossref --citeproc --lua-filter=filters/acknowledgments.lua
 ```
 
 ## Known Issues
 
 * AASTeX table environments pass through to LaTeX without trouble. But note that these will not translate to other outputs (HTML, epub, etc.). So consider what your desired outputs will be before you put lots of effort into tables. Or write a [pandoc filter](https://pandoc.org/filters.html) to handle tables.
-* The AAS bibliography format is not part of the [Zotero (citation) Style Repository](https://www.zotero.org/styles) so `pandoc-citeproc` does not have access to the correct citation style. This means that using `pandoc` to output directly to PDF will not result in the correct reference formatting. See above for a method to get PDF output with AAS Journals compatible references.
+* The AAS bibliography format is not part of the [Zotero (citation) Style Repository](https://www.zotero.org/styles) so `citeproc` does not have access to the correct citation style. This means that using `pandoc` to output directly to PDF will not result in the correct reference formatting. See above for a method to get PDF output with AAS Journals compatible references.

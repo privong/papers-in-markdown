@@ -32,10 +32,11 @@ These templates require:
 - [pandoc](https://pandoc.org)
 - A (La)TeX typesetting engine (If you want to make a PDF instead of just stopping at TeX source)
 
-Technically optional, but since I have never seen a paper without citations and in-text references, you will also probably want:
+Technically optional, but since I have never seen a paper without in-text references, you will also probably want:
 
-- [pandoc-citeproc](https://github.com/jgm/pandoc-citeproc)
 - [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
+
+*Note*: `[pandoc-citeproc](https://github.com/jgm/pandoc-citeproc)` has been deprecated in favor of `[citeproc](https://github.com/jgm/citeproc)`; the latter is now a built-in library.
 
 ## Ancillary Files
 

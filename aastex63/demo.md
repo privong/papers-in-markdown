@@ -26,7 +26,7 @@ author:
 #  affiliation: ["Department of Psychoceramics, Wesleyan University, Middletown, CT", "Department of Psychoceramics, Brown University: Providence, RI"]
 #  collaboration: "(ORCID Demonstration)"
 keywords: [miscellaneous]
-software: ["[`pandoc`](http://pandoc.org)", "[`pandoc-citeproc`](https://github.com/jgm/pandoc-citeproc)", "[`pandoc-crossref`](https://github.com/lierdakil/pandoc-crossref)"]
+software: ["[`pandoc`](http://pandoc.org)", "[`citeproc`](https://github.com/jgm/citeproc)", "[`pandoc-crossref`](https://github.com/lierdakil/pandoc-crossref)"]
 facility: []
 abstract: |
   Markdown is a markup format that can be used to create articles with readable source while making it easy to translate to other formats (e.g., \TeX\, HTML, docx, and PDF [via \TeX]).
@@ -230,9 +230,9 @@ So the benefits of directly including \TeX\ tables in the Markdown file must be 
 
 ## Citations {#sec:citations}
 
-Citations can be incorporated using the `pandoc-citeproc` filter.
+Citations can be incorporated using the `citeproc` filter.
 These citations take the form of: `[@Astropy2018]`, which corresponds to to: [@Astropy2018] or `@Astropy2018` to cite in the format of: @Astropy2018.
-By default, `pandoc-citeproc` will convert the references into text when generating \TeX\ or PDF files, in a format specified by the user via a Citation Style Language^[<https://citationstyles.org/>] definition.
+By default, `citeproc` will convert the references into text when generating \TeX\ or PDF files, in a format specified by the user via a Citation Style Language^[<https://citationstyles.org/>] definition.
 Presently most of the main astrophysics journals lack entries in the CSL database.
 In order to create journal-compatible submission files the Markdown file must be explicitly converted to \TeX\ prior to compilation to PDF.
 
@@ -309,8 +309,8 @@ Note that a lua parser is included with `pandoc` versions 2.0 and newer, and the
 
 Naively `pandoc` does not support internal reference to figures or equations and does not support numbered section references.
 However the `pandoc-crossref` filter adds support for this (and has been used in the preparation of this document).
-`pandoc-crossref` uses the same syntax as `pandoc-citeproc`, so adds little cognitive overhead in inter-document referencing.
-However to avoid `pandoc-citeproc` incorrectly processing internal references, `pandoc-crossref` must be invoked first.
+`pandoc-crossref` uses the same syntax as `citeproc`, so adds little cognitive overhead in inter-document referencing.
+However to avoid `citeproc` incorrectly processing internal references, `pandoc-crossref` must be invoked first.
 
 ## \TeX\ Clean up {#sec:texclean}
 
